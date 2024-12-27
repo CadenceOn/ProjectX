@@ -1,0 +1,32 @@
+{
+    "name": "sber",
+    "version": "1.0.0",
+    "description": "None",
+    "main": "./src/index.tsx",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "brojs server --port=8099 --with-open-browser",
+        "build": "npm run clean && brojs build --dev",
+        "build:prod": "npm run clean && brojs build",
+        "clean": "rimraf dist"
+    },
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CadenceOn/ProjectX.git"
+    },
+    "author": "None's",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/CadenceOn/ProjectX/issues"
+    },
+    "homepage": "https://github.com/CadenceOn/ProjectX#readme",
+    "dependencies": {
+        "@brojs/cli": "^1.8.4",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "express": "^4.19.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}
