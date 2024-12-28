@@ -7,7 +7,7 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
     const location = useLocation();
 
     // Проверяем, находимся ли мы на главной странице
-    const isHomePage = location.pathname === '/sber';
+    const isHomePage = location.pathname === '/project_x';
 
     return (
         <header className="header">

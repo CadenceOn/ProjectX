@@ -8,7 +8,7 @@ const MovieDetails = lazy(() => import('./details/MovieDetails'));
 const HomePage = lazy(() => import('./home/HomePage'));
 
 const App = () => (
-    <Router basename="/project_x"> {/* Добавляем basename */}
+    <Router basename="/project_x"> { }
         <Header onSearch={(query) => console.log(query)} />
 
         <main>

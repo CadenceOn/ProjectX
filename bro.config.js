@@ -36,9 +36,9 @@ module.exports = {
     // },
   },
   navigations: {
-    "home": "/project_x", // Главная страница
-    "details": "/project_x/movies/:id", // Страница деталей фильма
-    "favorites": "/project_x/favorites", // Избранное
+    "home": "/", // Главная страница
+    "details": "/movies/:id", // Страница деталей фильма
+    "favorites": "/favorites", // Избранное
   },
   features: {
     "home": {
