@@ -7,6 +7,7 @@
     <list default="true" id="9900ad34-97d9-483a-a28d-4499a3f5f480" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +160,7 @@
       <workItem from="1735335644964" duration="773000" />
       <workItem from="1735339491402" duration="5013000" />
       <workItem from="1735344611801" duration="1707000" />
-      <workItem from="1735369764436" duration="6482000" />
+      <workItem from="1735369764436" duration="7794000" />
     </task>
     <servers />
   </component>
