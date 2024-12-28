@@ -1,0 +1,25 @@
+/* Header */
+header {
+    background-color: #202020;
+    color: #f4f4f4;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #ff9800;
+}
+
+header nav a {
+    margin-left: 15px;
+    color: #f4f4f4;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: #ff9800;
+}

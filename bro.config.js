@@ -7,16 +7,20 @@ module.exports = {
       publicPath: `/static/${pkg.name}/${process.env.VERSION || pkg.version}/`,
     },
   },
-  /* use https://admin.bro-js.ru/ to create config, navigations and features */
   navigations: {
-    "sber.main": "/sber",
+    "home": "/", // Главная страница
+    "details": "/movies/:id", // Страница деталей фильма
+    "favorites": "/favorites", // Избранное
   },
   features: {
-    "sber": {
-      // add your features here in the format [featureName]: { value: string }
+    "home": {
+      entry: "./src/home/index.ts",
     },
-  },
-  config: {
-    "sber.api": "/api",
+    "details": {
+      entry: "./src/details/index.ts",
+    },
+    "favorites": {
+      entry: "./src/favorites/index.ts",
+    },
   },
 };

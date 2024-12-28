@@ -1,0 +1,44 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #181818; /* Тёмный фон */
+    border: 1px solid #444; /* Тонкая обводка */
+    border-radius: 25px; /* Скруглённые углы для строки поиска */
+    padding: 5px 10px; /* Внутренние отступы */
+    width: 100%;
+    max-width: 500px; /* Максимальная ширина */
+}
+
+.search-bar input {
+    background-color: transparent; /* Прозрачный фон */
+    border: none; /* Убираем границы */
+    outline: none; /* Убираем подсветку */
+    color: #f4f4f4; /* Цвет текста */
+    width: 100%; /* Заполнение доступного пространства */
+    font-size: 1rem; /* Размер текста */
+    padding-left: 10px; /* Отступ от кнопки */
+}
+
+.search-bar input::placeholder {
+    color: #888; /* Цвет placeholder */
+}
+
+.search-button {
+    background: none; /* Прозрачный фон */
+    border: none; /* Убираем границы */
+    color: #f4f4f4; /* Цвет текста */
+    cursor: pointer; /* Указатель мыши */
+    font-size: 1.2rem; /* Размер иконки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Ширина кнопки */
+    height: 35px; /* Высота кнопки */
+    border-radius: 50%; /* Круглая форма */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #ff9800; /* Оранжевый фон при наведении */
+    color: #181818; /* Тёмный цвет иконки при наведении */
+}

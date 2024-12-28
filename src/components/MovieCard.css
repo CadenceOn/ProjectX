@@ -1,0 +1,50 @@
+/* src/components/MovieCard.css */
+.movie-card {
+    background-color: #202020; /* Тёмный фон карточки */
+    color: #f4f4f4; /* Светлый текст */
+    text-align: center; /* Центровка текста */
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 8px; /* Скруглённые углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    transition: transform 0.3s ease; /* Анимация на увеличение */
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+.movie-card img {
+    width: 100%; /* Ширина изображения по карточке */
+    height: 300px; /* Фиксированная высота */
+    object-fit: cover; /* Кадрирование изображения */
+    border-radius: 4px; /* Скругление углов изображения */
+}
+
+.movie-card h3 {
+    font-size: 1.2rem; /* Размер заголовка */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    color: #f4f4f4; /* Цвет текста заголовка */
+}
+
+.movie-card p {
+    font-size: 0.9rem; /* Размер текста */
+    color: #b3b3b3; /* Светло-серый текст */
+    margin: 5px 0; /* Отступы сверху и снизу */
+}
+
+.details-button {
+    display: inline-block; /* Кнопка занимает минимальную ширину */
+    margin-top: 10px; /* Отступ сверху */
+    padding: 10px 15px; /* Внутренние отступы */
+    font-size: 0.9rem; /* Размер текста кнопки */
+    color: #181818; /* Тёмный текст */
+    background-color: #ff9800; /* Оранжевый фон */
+    border-radius: 4px; /* Скруглённые углы кнопки */
+    text-decoration: none; /* Убираем подчёркивание */
+    font-weight: bold; /* Жирный текст */
+    transition: background-color 0.3s ease; /* Анимация цвета */
+}
+
+.details-button:hover {
+    background-color: #e67e00; /* Тёмно-оранжевый фон при наведении */
+}
