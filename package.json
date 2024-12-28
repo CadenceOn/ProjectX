@@ -8,7 +8,9 @@
         "start": "brojs server --port=8099 --with-open-browser",
         "build": "npm run clean && brojs build --dev",
         "build:prod": "npm run clean && brojs build",
-        "clean": "rimraf dist"
+        "clean": "rimraf dist",
+        "webpack:build": "webpack --mode production",
+        "webpack:start": "webpack serve --mode development --open"
     },
     "private": true,
     "repository": {
@@ -30,5 +32,13 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^7.1.1"
+    },
+    "devDependencies": {
+        "css-loader": "^7.1.2",
+        "file-loader": "^6.2.0",
+        "style-loader": "^4.0.0",
+        "ts-loader": "^9.5.1",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1"
     }
 }
