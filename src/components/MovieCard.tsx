@@ -7,7 +7,7 @@ const MovieCard = ({ movie }: { movie: { Title: string; Year: string; Poster: st
         <img src={movie.Poster} alt={movie.Title} />
         <h3>{movie.Title}</h3>
         <p>{movie.Year}</p>
-        <Link to={`/movies/${movie.imdbID}`} className="details-button">Посмотреть детали</Link>
+        <Link to={`/project_x/movies/${movie.imdbID}`} className="details-button">Посмотреть детали</Link>
     </div>
 );
 

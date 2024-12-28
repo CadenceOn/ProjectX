@@ -8,15 +8,15 @@ const MovieDetails = lazy(() => import('./details/MovieDetails'));
 const HomePage = lazy(() => import('./home/HomePage'));
 
 const App = () => (
-    <Router basename="/project_x"> { }
+    <Router >
         <Header onSearch={(query) => console.log(query)} />
 
         <main>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path="/" element={<HomePage />} /> {/* Главная страница */}
-                    <Route path="/movies/:id" element={<MovieDetails />} /> {/* Детали фильма */}
-                    <Route path="/favorites" element={<FavoritesPage />} /> {/* Избранное */}
+                    <Route path="/project_x/" element={<HomePage />} /> {/* Главная страница */}
+                    <Route path="/project_x/movies/:id" element={<MovieDetails />} /> {/* Детали фильма */}
+                    <Route path="/project_x/favorites" element={<FavoritesPage />} /> {/* Избранное */}
                 </Routes>
             </Suspense>
         </main>
