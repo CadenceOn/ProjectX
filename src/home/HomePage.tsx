@@ -1,30 +1,34 @@
 // src/home/HomePage.tsx
-import React, { useState, useEffect } from 'react';
-import SearchBar from '../components/SearchBar';
-import MovieCard from '../components/MovieCard';
-import Loader from '../components/Loader';
-import './HomePage.css';
-import { useLocation } from 'react-router-dom';
-
-
+import React, { useState, useEffect, useContext } from "react";
+import SearchBar from "../components/SearchBar";
+import MovieCard from "../components/MovieCard";
+import Loader from "../components/Loader";
+import "./HomePage.css";
+import { ContainerGrid } from "../components/ContainerGrid";
+import { Context } from "../store/context";
+import { GridPoster } from "../components/GridPoster/components/GridPoster";
 
 const HomePage = () => {
     const [movies, setMovies] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('Avengers');
+    const [searchQuery, setSearchQuery] = useState("Avengers");
     const [loading, setLoading] = useState(true);
+    const { store } = useContext(Context);
 
     const fetchMovies = async () => {
         setLoading(true);
-        const response = await fetch(`https://www.omdbapi.com/?s=${searchQuery}&apikey=c65201f0`);
-        const data = await response.json();
-        if (data.Search) {
-            setMovies(data.Search);
-        }
-        setLoading(false);
+        store.list
+            .getFilmsFilter({ keyword: searchQuery })
+            .then((response) => {
+                setMovies(response.data.items);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     useEffect(() => {
         fetchMovies();
+        console.log('dsds', movies)
     }, [searchQuery]);
 
     return (
@@ -33,11 +37,17 @@ const HomePage = () => {
             {loading ? (
                 <Loader />
             ) : (
-                <div className="movie-grid">
+                <ContainerGrid>
                     {movies.map((movie) => (
-                        <MovieCard key={movie.imdbID} movie={movie} />
+                        <GridPoster
+                            id={movie.kinopoiskId}
+                            name={movie.nameRu ? movie.nameRu : movie.nameEn}
+                            creator={movie.rating}
+                            image={movie.posterUrl}
+                            key={movie.kinopoiskId}
+                        />
                     ))}
-                </div>
+                </ContainerGrid>
             )}
         </div>
     );
