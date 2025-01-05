@@ -7,6 +7,7 @@ import "./HomePage.css";
 import { ContainerGrid } from "../components/ContainerGrid";
 import { Context } from "../store/context";
 import { GridPoster } from "../components/GridPoster/components/GridPoster";
+import logo from "../components/logo.png"; 
 
 const HomePage = () => {
     const [movies, setMovies] = useState([]);

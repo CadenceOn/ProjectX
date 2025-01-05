@@ -5,21 +5,58 @@ header {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Выравнивание элементов по вертикали */
 }
 
+/* Логотип контейнер */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между логотипом и текстом */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 30; /* Фиксированная высота логотипа */
+    width: auto;  /* Масштабируется пропорционально */
+}
+
+/* Заголовок рядом с логотипом */
 header h1 {
     font-size: 1.5rem;
     color: #ff9800;
+    margin: 0; /* Убираем лишние отступы */
+    line-height: 1; /* Выравниваем по высоте */
+}
+
+/* Навигация */
+header nav {
+    display: flex;
+    align-items: center; /* Центрируем элементы по вертикали */
+    gap: 15px; /* Расстояние между ссылками */
 }
 
 header nav a {
-    margin-left: 15px;
+    font-size: 1rem; /* Единый размер текста для ссылок */
     color: #f4f4f4;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 header nav a:hover {
     color: #ff9800;
+    transform: scale(1.05);
+}
+
+/* Активная ссылка */
+header nav a.active {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
 }
