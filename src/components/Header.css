@@ -11,13 +11,35 @@ header {
 header h1 {
     font-size: 1.5rem;
     color: #ff9800;
+    margin-left: 10px; /* Для разделения текста от логотипа */
 }
 
+/* Логотип контейнер */
+.logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Указатель для кликабельности */
+    transition: transform 0.2s ease; /* Добавление эффекта при наведении */
+}
+
+.logo-container:hover {
+    transform: scale(1.05); /* Легкое увеличение логотипа при наведении */
+}
+
+/* Логотип */
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Навигация */
 header nav a {
     margin-left: 15px;
     color: #f4f4f4;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
