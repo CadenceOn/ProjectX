@@ -1,0 +1,23 @@
+.about-page {
+    padding: 20px;
+    background-color: #202020;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.about-page h1 {
+    font-size: 2rem;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+.about-page h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ff9800;
+}
+
+.about-page p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
