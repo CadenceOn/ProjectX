@@ -1,11 +1,12 @@
-/* Header */
-header {
+/* Общие стили для Header */
+.header {
     background-color: #202020;
     color: #f4f4f4;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Выравнивание элементов по вертикали */
+    align-items: center;
+    height: auto;
 }
 
 /* Логотип контейнер */
@@ -21,9 +22,10 @@ header {
     transform: scale(1.05);
 }
 
+/* Логотип */
 .logo {
-    height: 30; /* Фиксированная высота логотипа */
-    width: auto;  /* Масштабируется пропорционально */
+    height: 40px; /* Высота логотипа */
+    width: auto; /* Пропорциональное масштабирование */
 }
 
 /* Заголовок рядом с логотипом */
@@ -34,11 +36,11 @@ header h1 {
     line-height: 1; /* Выравниваем по высоте */
 }
 
-/* Навигация */
+/* Навигационная панель */
 header nav {
     display: flex;
     align-items: center; /* Центрируем элементы по вертикали */
-    gap: 15px; /* Расстояние между ссылками */
+    gap: 20px; /* Расстояние между ссылками */
 }
 
 header nav a {
@@ -59,4 +61,52 @@ header nav a:hover {
 header nav a.active {
     color: #ff9800;
     border-bottom: 2px solid #ff9800;
+}
+
+/* Контейнер для избранного */
+.favorites-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Кружок с количеством фильмов */
+.favorites-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 50%; /* Делаем элемент круглым */
+    padding: 5px 8px; /* Внутренние отступы */
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    min-width: 20px; /* Минимальная ширина */
+    height: 20px; /* Фиксированная высота */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 1; /* По умолчанию видимая */
+}
+
+/* Анимация падения кружка */
+.drop-animation {
+    animation: drop 0.5s ease forwards;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-50px) scale(1.2); /* Начальная точка выше кнопки */
+        opacity: 0; /* Исчезновение */
+    }
+    50% {
+        transform: translateY(0px) scale(1.1); /* Промежуточная точка */
+        opacity: 1; /* Появление */
+    }
+    100% {
+        transform: translateY(0px) scale(1); /* Конечная точка */
+        opacity: 1;
+    }
 }
