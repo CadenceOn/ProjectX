@@ -7,7 +7,7 @@ const MovieCard = ({
 }: {
     movie: { nameRu: string; year: string; posterUrl: string; kinopoiskId: string };
 }) => {
-    console.log(movie);
+    //console.log(movie);
     return (
         <div className="movie-card">
             <img src={movie.posterUrl} alt={movie.nameRu} />
