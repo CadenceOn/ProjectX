@@ -14,4 +14,15 @@
     gap: 20px; /* Расстояние между карточками */
     margin-top: 20px;
 }
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.logo {
+    width: 150px; /* Задайте нужный размер */
+    height: auto;
+}
 
