@@ -90,23 +90,3 @@ header nav a.active {
     transition: transform 0.3s ease, background-color 0.3s ease;
     opacity: 1; /* По умолчанию видимая */
 }
-
-/* Анимация падения кружка */
-.drop-animation {
-    animation: drop 0.5s ease forwards;
-}
-
-@keyframes drop {
-    0% {
-        transform: translateY(-50px) scale(1.2); /* Начальная точка выше кнопки */
-        opacity: 0; /* Исчезновение */
-    }
-    50% {
-        transform: translateY(0px) scale(1.1); /* Промежуточная точка */
-        opacity: 1; /* Появление */
-    }
-    100% {
-        transform: translateY(0px) scale(1); /* Конечная точка */
-        opacity: 1;
-    }
-}
