@@ -33,9 +33,18 @@ class ListInfo {
     public readonly getSearch = services.ListMovie.getSearch;
 }
 
+class WatchMovie{
+    constructor(){
+        makeAutoObservable(this);
+    }
+    public readonly getWatchMovieInfo = services.WatchMovie.getMovie;
+    public readonly getPlayerInfo = services.WatchMovie.getPlayerInfo;
+}
+
 export class Store {
     public readonly movie = new Movie();
     public readonly list = new ListInfo();
+    public readonly watchMovie = new WatchMovie();
     public loader = false;
     public error = 0;
     public bookmarks: types.Bookmarks[] = [];

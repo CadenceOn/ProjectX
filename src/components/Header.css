@@ -1,12 +1,18 @@
 /* Общие стили для Header */
-.header {
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #202020;
+}
+.header {
+    width: 90%;
     color: #f4f4f4;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto;
+    max-height: 90px;
 }
 
 /* Логотип контейнер */
@@ -24,8 +30,8 @@
 
 /* Логотип */
 .logo {
-    height: 40px; /* Высота логотипа */
-    width: auto; /* Пропорциональное масштабирование */
+    height: 40px;    
+    max-width: 90px;
 }
 
 /* Заголовок рядом с логотипом */
@@ -34,6 +40,7 @@ header h1 {
     color: #ff9800;
     margin: 0; /* Убираем лишние отступы */
     line-height: 1; /* Выравниваем по высоте */
+    user-select: none;
 }
 
 /* Навигационная панель */
@@ -54,7 +61,6 @@ header nav a {
 
 header nav a:hover {
     color: #ff9800;
-    transform: scale(1.05);
 }
 
 /* Активная ссылка */
@@ -89,4 +95,14 @@ header nav a.active {
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
     opacity: 1; /* По умолчанию видимая */
+}
+.nav-link{
+    user-select: none;
+    cursor: pointer;
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+.favorites-container a:hover {
+    color: #ff9800;
 }

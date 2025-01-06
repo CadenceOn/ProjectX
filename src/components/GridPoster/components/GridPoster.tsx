@@ -69,11 +69,11 @@ const Image = styled.div`
     background-size: cover;
     border-radius: 15px;
 
-    :hover {
-        opacity: 0.7;
+    &:hover {
+        scale: 1.05;
     }
-    :active {
-        opacity: 0.5;
+    &:active {
+        scale: 0.95;
     }
 
     transition: all 0.3s;

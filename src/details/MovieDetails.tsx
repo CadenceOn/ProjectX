@@ -1,40 +1,48 @@
 // src/details/MovieDetails.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import './MovieDetails.css'
+import "./MovieDetails.css";
+import { Context } from "../store/context";
 
 const MovieDetails = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [movieToken, setMovieToken] = useState("");
+    const [playerUrls, setPlayerUrls] = useState<string[]>([]);
+    const [playerNumber, setPlayerNumber] = useState(0);
+    const { store } = useContext(Context);
 
     const fetchMovieDetails = async () => {
         try {
-            const response = await fetch(
-                `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}`,
-                {
-                    headers: {
-                        "X-API-KEY": "fc454c1a-dfc3-4581-80b1-5c95115a9bd6",
-                    },
-                }
-            );
-            const tokerFilm = await fetch(
-                `https://api.apbugall.org/?token=45e20a5f584becf7a64dffb7174ddf&kp=${id}`
-            );
-
-            const tokerFilmJson = await tokerFilm.json();
-            console.log("tokerFilm", tokerFilmJson);
-            setMovieToken(tokerFilmJson.data.token_movie);
-            const data = await response.json();
-
-            if (data) {
-                setMovie(data);
-                setError(null);
-            } else {
-                setError("Error");
-            }
+            store.movie
+                .getMovie({ id: Number(id) })
+                .then((response) => {
+                    setMovie(response.data);
+                    setError(null);
+                })
+                .catch(() => {
+                    setError("Error");
+                });
+            store.watchMovie
+                .getPlayerInfo({ id: Number(id) })
+                .then((response) => {
+                    console.log("response", response);
+                    if (
+                        response.data.data &&
+                        Array.isArray(response.data.data)
+                    ) {
+                        setPlayerUrls(
+                            response.data.data
+                                .map((item) => {
+                                    if (item.iframeUrl) {
+                                        return item.iframeUrl;
+                                    }
+                                })
+                                .filter((element) => element !== undefined)
+                        );
+                    }
+                });
         } catch (err) {
             setError("Failed to fetch movie details");
         } finally {
@@ -43,7 +51,6 @@ const MovieDetails = () => {
     };
 
     useEffect(() => {
-        console.log("dsdsdss");
         fetchMovieDetails();
     }, [id]);
 
@@ -64,11 +71,30 @@ const MovieDetails = () => {
             <p>
                 <strong>Rating Imdb:</strong> {movie.ratingImdb}
             </p>
-            <a href={`https://flicksbar.mom/film/${id}`}>Смотреть</a>
-            <a href={`https://flicksbar.mom/film/${id}`}>Смотреть</a>
+            <a href={`https://flicksbar.mom/film/${id}`}>
+                Смотреть на Flicksbar
+            </a>
+            <div className="playerControlPanel">
+                <h1>Выберите плеер.</h1>
+                <div className="playerButtonContainer">
+                    {playerUrls.map((item, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className="buttonPlayer"
+                                onClick={() => {
+                                    setPlayerNumber(i);
+                                }}
+                            >
+                                {i}
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
             <iframe
                 className="moviePlayer"
-                src={`https://thesaurus.allohalive.com/?token_movie=${movieToken}&amp;token=45e20a5f584becf7a64dffb7174ddf&amp;null=`}
+                src={playerUrls[playerNumber]}
             ></iframe>
         </div>
     );

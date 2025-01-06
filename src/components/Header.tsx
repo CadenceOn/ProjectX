@@ -23,40 +23,44 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
     };
 
     return (
-        <header className="header">
-            <div className="logo-container" onClick={handleLogoClick}>
-                <img src={logo} alt="Logo" className="logo" />
-                <h1>Kinopoisk Clone</h1>
-            </div>
-
-            <nav>
-                <a
-                    className={isAboutPage ? "nav-link active" : "nav-link"}
-                    onClick={() => navigate("/project_x/about")}
-                >
-                    О нас
-                </a>
-                <div
-                    className="favorites-container"
-                    onClick={handleFavoritesClick}
-                >
-                    <a
-                        className={isFavoritesPage ? "nav-link active" : "nav-link"}
-                    >
-                        Избранное
-                    </a>
-                    {store.bookmarks.length > 0 && (
-                        <span className="favorites-badge">
-                            {store.bookmarks.length}
-                        </span>
-                    )}
+        <div className="wrapper">
+            <header className="header">
+                <div className="logo-container" onClick={handleLogoClick}>
+                    <img src={logo} alt="Logo" className="logo" />
+                    <h1>Kinopoisk Clone</h1>
                 </div>
-            </nav>
 
-            {!isHomePage && !isAboutPage && !isFavoritesPage && (
-                <SearchBar onSearch={onSearch} />
-            )}
-        </header>
+                <nav>
+                    <a
+                        className={isAboutPage ? "nav-link active" : "nav-link"}
+                        onClick={() => navigate("/project_x/about")}
+                    >
+                        О нас
+                    </a>
+                    <div
+                        className="favorites-container"
+                        onClick={handleFavoritesClick}
+                    >
+                        <a
+                            className={
+                                isFavoritesPage ? "nav-link active" : "nav-link"
+                            }
+                        >
+                            Избранное
+                        </a>
+                        {store.bookmarks.length > 0 && (
+                            <span className="favorites-badge">
+                                {store.bookmarks.length}
+                            </span>
+                        )}
+                    </div>
+                </nav>
+
+                {!isHomePage && !isAboutPage && !isFavoritesPage && (
+                    <SearchBar onSearch={onSearch} />
+                )}
+            </header>
+        </div>
     );
 };
 

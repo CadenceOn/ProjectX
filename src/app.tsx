@@ -13,8 +13,7 @@ const App = () => (
     <Context.Provider value={{ store }}> 
         <Router>
             <Header onSearch={(query) => console.log(query)} />
-
-            <main>
+            <main className="centerContent">
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
                         <Route path="/project_x/" element={<HomePage />} /> {/* Главная страница */}
