@@ -1,51 +1,67 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import SearchBar from './SearchBar';
-import './Header.css';
-import logo from './logo.png'; // Импорт логотипа
+import React, { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import { Context } from "../store/context";
+
+import "./Header.css";
+import logo from "./logo.png";
+import SearchBar from "./SearchBar";
 
 const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
-    const location = useLocation();
+    const { store } = useContext(Context);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    // Проверяем, находимся ли мы на определенных страницах
-    const isHomePage = location.pathname === '/project_x';
-    const isAboutPage = location.pathname === '/project_x/about';
-    const isFavoritesPage = location.pathname === '/project_x/favorites';
+    const isHomePage = location.pathname === "/project_x";
+    const isAboutPage = location.pathname === "/project_x/about";
+    const isFavoritesPage = location.pathname === "/project_x/favorites";
 
-    // Обработчик клика по логотипу
-    const handleLogoClick = () => {
-        navigate('/project_x'); // Переход на главную страницу
+    const handleLogoClick = () => navigate("/project_x");
+
+    const handleFavoritesClick = () => {
+        navigate("/project_x/favorites");
     };
 
     return (
-        <header className="header">
-            {/* Логотип с обработчиком клика */}
-            <div className="logo-container" onClick={handleLogoClick}>
-                <img src={logo} alt="Logo" className="logo" />
-                <h1>Kinopoisk Clone</h1>
-            </div>
+        <div className="wrapper">
+            <header className="header">
+                <div className="logo-container" onClick={handleLogoClick}>
+                    <img src={logo} alt="Logo" className="logo" />
+                    <h1>Kinopoisk Clone</h1>
+                </div>
 
-            {/* Навигационная панель */}
-            <nav>
-                <a
-                    className={isAboutPage ? 'nav-link active' : 'nav-link'}
-                    onClick={() => navigate('/project_x/about')}
-                >
-                    О нас
-                </a>
-                <a
-                    className={isFavoritesPage ? 'nav-link active' : 'nav-link'}
-                    onClick={() => navigate('/project_x/favorites')}
-                >
-                    Избранное
-                </a>
-            </nav>
+                <nav>
+                    <a
+                        className={isAboutPage ? "nav-link active" : "nav-link"}
+                        onClick={() => navigate("/project_x/about")}
+                    >
+                        О нас
+                    </a>
+                    <div
+                        className="favorites-container"
+                        onClick={handleFavoritesClick}
+                    >
+                        <a
+                            className={
+                                isFavoritesPage ? "nav-link active" : "nav-link"
+                            }
+                        >
+                            Избранное
+                        </a>
+                        {store.bookmarks.length > 0 && (
+                            <span className="favorites-badge">
+                                {store.bookmarks.length}
+                            </span>
+                        )}
+                    </div>
+                </nav>
 
-            {/* Панель поиска — отображается только на страницах, где это нужно */}
-            {!isHomePage && !isAboutPage && !isFavoritesPage && <SearchBar onSearch={onSearch} />}
-        </header>
+                {!isHomePage && !isAboutPage && !isFavoritesPage && (
+                    <SearchBar onSearch={onSearch} />
+                )}
+            </header>
+        </div>
     );
 };
 
-export default Header;
+export default observer(Header);

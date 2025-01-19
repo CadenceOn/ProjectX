@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { observer } from "mobx-react-lite";
 import { Context } from "../store/context";
 import styled from "styled-components";
+import './FavoritesPage.css';
 
 const FavoritesPage = () => {
     const { store } = useContext(Context); // Получаем store из контекста

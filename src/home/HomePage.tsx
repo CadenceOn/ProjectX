@@ -1,17 +1,15 @@
 // src/home/HomePage.tsx
 import React, { useState, useEffect, useContext } from "react";
 import SearchBar from "../components/SearchBar";
-import MovieCard from "../components/MovieCard";
 import Loader from "../components/Loader";
 import "./HomePage.css";
 import { ContainerGrid } from "../components/ContainerGrid";
 import { Context } from "../store/context";
 import { GridPoster } from "../components/GridPoster/components/GridPoster";
-import logo from "../components/logo.png"; 
 
 const HomePage = () => {
     const [movies, setMovies] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("Avengers");
+    const [searchQuery, setSearchQuery] = useState("");
     const [loading, setLoading] = useState(true);
     const { store } = useContext(Context);
 
