@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './MovieCard.css';
-import RatingComponent from './Rating';
+import RatingComponent from './RatingComponent';
 
 const MovieCard = ({
     movie,
