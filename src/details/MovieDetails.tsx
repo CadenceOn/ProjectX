@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./MovieDetails.css";
 import { Context } from "../store/context";
 import RatingComponent from "../components/RatingComponent";
+import RatingComponent from "../components/RatingComponent";
 
 const MovieDetails = () => {
     const { id } = useParams();

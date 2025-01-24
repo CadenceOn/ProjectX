@@ -106,3 +106,34 @@
 .rating-component button.active {
     color: gold;
 }
+.user-rating {
+    display: flex; /* Выравниваем элементы по горизонтали */
+    align-items: center; /* Выравниваем текст и звёзды по вертикали */
+    gap: 10px; /* Расстояние между текстом и звёздами */
+  }
+  
+  .rating-component {
+    display: flex; /* Для звёзд остаётся горизонтальное расположение */
+    gap: 5px; /* Расстояние между звёздами */
+  }
+  
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между звёздами и текстом */
+}
+
+.rating-component button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.rating-component button:hover,
+.rating-component button.active {
+    color: gold;
+}
