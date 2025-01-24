@@ -4,7 +4,7 @@ import './MovieCard.css';
 import RatingComponent from './Rating';
 
 const MovieCard = ({
-  movie,
+    movie,
 }: {
   movie: {
     nameRu: string;
