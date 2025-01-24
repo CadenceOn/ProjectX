@@ -1,8 +1,8 @@
-// src/details/MovieDetails.tsx
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import "./MovieDetails.css";
 import { Context } from "../store/context";
+import RatingComponent from "../components/RatingComponent";
 
 const MovieDetails = () => {
     const { id } = useParams();
@@ -71,6 +71,10 @@ const MovieDetails = () => {
             <p>
                 <strong>Rating Imdb:</strong> {movie.ratingImdb}
             </p>
+            <div className="user-rating">
+                <h4>Your Rating:</h4>
+                <RatingComponent movieId={id} />
+            </div>
             <a href={`https://flicksbar.mom/film/${id}`}>
                 Смотреть на Flicksbar
             </a>
