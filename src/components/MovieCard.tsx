@@ -5,7 +5,6 @@ import RatingComponent from './RatingComponent';
 
 const MovieCard = ({
     movie,
-    movie,
 }: {
   movie: {
     nameRu: string;
