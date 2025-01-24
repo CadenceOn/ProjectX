@@ -1,42 +1,42 @@
-import React, { useState } from "react";
-import "./AboutPage.css";
-import AEImage from "../assets/AE.jpg";
-import NMImage from "../assets/NM.jpg";
-import ONImage from "../assets/ON.jpg";
-import IBImage from "../assets/IB.jpg";
+import React, { useState } from 'react';
+import './AboutPage.css';
+import AEImage from '../assets/AE.jpg';
+import NMImage from '../assets/NM.jpg';
+import ONImage from '../assets/ON.jpg';
+import IBImage from '../assets/IB.jpg';
 
 // Данные о членах команды
 const teamMembers = [
   {
-    name: "АE",
-    role: "не придумал",
-    description: "AE - талантливый разработчик и отличный собеседник.",
+    name: 'АE',
+    role: 'не придумал',
+    description: 'AE - талантливый разработчик и отличный собеседник.',
     image: AEImage,
   },
   {
-    name: "NM",
-    role: "просто чиловый парень",
-    description: "NM - любитель котов, чилловой музыки и приятных разговоров.",
+    name: 'NM',
+    role: 'просто чиловый парень',
+    description: 'NM - любитель котов, чилловой музыки и приятных разговоров.',
     image: NMImage,
   },
   {
-    name: "ON",
-    role: "не придумал",
-    description: "ON - разработчик с глубокими знаниями и аналитическим подходом.",
+    name: 'ON',
+    role: 'не придумал',
+    description: 'ON - разработчик с глубокими знаниями и аналитическим подходом.',
     image: ONImage,
   },
   {
-    name: "IB",
-    role: "не придумал",
-    description: "IB - креативный человек с нестандартным мышлением.",
+    name: 'IB',
+    role: 'не придумал',
+    description: 'IB - креативный человек с нестандартным мышлением.',
     image: IBImage,
   },
 ];
 
 const AboutPage: React.FC = () => {
-  const [selectedMember, setSelectedMember] = useState<null | typeof teamMembers[0]>(null);
+  const [selectedMember, setSelectedMember] = useState<null | (typeof teamMembers)[0]>(null);
 
-  const handleCardClick = (member: typeof teamMembers[0]) => {
+  const handleCardClick = (member: (typeof teamMembers)[0]) => {
     setSelectedMember(member); // Устанавливаем выбранного участника
   };
 
@@ -69,11 +69,7 @@ const AboutPage: React.FC = () => {
               &times;
             </button>
             <div className="modal-body">
-              <img
-                src={selectedMember.image}
-                alt={selectedMember.name}
-                className="modal-image"
-              />
+              <img src={selectedMember.image} alt={selectedMember.name} className="modal-image" />
               <div className="modal-text">
                 <h2>{selectedMember.name}</h2>
                 <h3>{selectedMember.role}</h3>

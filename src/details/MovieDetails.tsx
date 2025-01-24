@@ -55,38 +55,43 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h1>{movie.nameRu}</h1>
-      <img src={movie.posterUrl} alt={movie.nameRu} />
-      <p>
-        <strong>Описание:</strong> {movie.description}
-      </p>
-      <p>
-        <strong>Жанр:</strong>{' '}
-        {movie.genres.map((genre, index) => (
-          <span key={index}>
-            {genre.genre}
-            {index < movie.genres.length - 1 && ', '}
-          </span>
-        ))}
-      </p>
-      <p>
-        <strong>Страна:</strong>{' '}
-        {movie.countries.map((country, index) => (
-          <span key={index}>
-            {country.country}
-            {index < movie.countries.length - 1 && ', '}
-          </span>
-        ))}
-      </p>
-      <p>
-        <strong>Год:</strong> {movie.year}
-      </p>
-      <p>
-        <strong>Рейтинг Kinopoisk:</strong> {movie.ratingKinopoisk}
-      </p>
-      <p>
-        <strong>Рейтинг Imdb:</strong> {movie.ratingImdb}
-      </p>
+      <div className="movie-details-container">
+        <img src={movie.posterUrl} alt={movie.nameRu} className="movie-poster" />
+        <div className="movie-info">
+          <h1>{movie.nameRu}</h1>
+          <p>
+            <strong>Описание:</strong> {movie.description}
+          </p>
+          <p>
+            <strong>Жанр:</strong>{' '}
+            {movie.genres.map((genre, index) => (
+              <span key={index}>
+                {genre.genre}
+                {index < movie.genres.length - 1 && ', '}
+              </span>
+            ))}
+          </p>
+          <p>
+            <strong>Страна:</strong>{' '}
+            {movie.countries.map((country, index) => (
+              <span key={index}>
+                {country.country}
+                {index < movie.countries.length - 1 && ', '}
+              </span>
+            ))}
+          </p>
+          <p>
+            <strong>Год:</strong> {movie.year}
+          </p>
+          <p>
+            <strong>Рейтинг Kinopoisk:</strong> {movie.ratingKinopoisk}
+          </p>
+          <p>
+            <strong>Рейтинг IMDb:</strong> {movie.ratingImdb}
+          </p>
+        </div>
+      </div>
+
       <a href={`https://flicksbar.mom/film/${id}`}>Смотреть на Flicksbar</a>
       <div className="playerControlPanel">
         <h1>Выберите плеер.</h1>
