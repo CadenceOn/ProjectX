@@ -12,9 +12,8 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const isHomePage = location.pathname === "/project_x";
-    const isAboutPage = location.pathname === "/project_x/about";
-    const isFavoritesPage = location.pathname === "/project_x/favorites";
+    const excludeSearchBarPaths = ["/project_x", "/project_x/about", "/project_x/favorites"];
+    const shouldRenderSearchBar = !excludeSearchBarPaths.includes(location.pathname);
 
     const handleLogoClick = () => navigate("/project_x");
 
@@ -32,7 +31,7 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
 
                 <nav>
                     <a
-                        className={isAboutPage ? "nav-link active" : "nav-link"}
+                        className={location.pathname === "/project_x/about" ? "nav-link active" : "nav-link"}
                         onClick={() => navigate("/project_x/about")}
                     >
                         О нас
@@ -43,7 +42,7 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
                     >
                         <a
                             className={
-                                isFavoritesPage ? "nav-link active" : "nav-link"
+                                location.pathname === "/project_x/favorites" ? "nav-link active" : "nav-link"
                             }
                         >
                             Избранное
@@ -56,9 +55,7 @@ const Header = ({ onSearch }: { onSearch: (query: string) => void }) => {
                     </div>
                 </nav>
 
-                {!isHomePage && !isAboutPage && !isFavoritesPage && (
-                    <SearchBar onSearch={onSearch} />
-                )}
+                {shouldRenderSearchBar && <SearchBar onSearch={onSearch} />}
             </header>
         </div>
     );
