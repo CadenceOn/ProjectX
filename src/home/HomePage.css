@@ -1,9 +1,10 @@
-/* src/home/HomePage.css */
+/* Основной контейнер страницы */
 .home-page {
   padding: 20px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   color: #f4f4f4;
+  background-color: #121212; /* Темный фон */
 }
 
 /* Сетка карточек фильмов */
@@ -13,6 +14,8 @@
   gap: 20px; /* Расстояние между карточками */
   margin-top: 20px;
 }
+
+/* Логотип */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -25,13 +28,15 @@
   height: auto;
 }
 
+/* Контейнер для поиска и фильтра */
 .search-filter-container {
-  display: flex; /* Размещаем элементы горизонтально */
-  align-items: center; /* Выравниваем элементы по вертикали */
-  gap: 30px; /* Отступ между поисковой строкой и кнопкой */
-  margin-bottom: 20px; /* Отступ снизу для разделения с остальным контентом */
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
+/* Кнопка фильтрации */
 .filter-button {
   background-color: #ff9800;
   color: white;
@@ -47,14 +52,52 @@
   background-color: #e68900;
 }
 
+/* Контейнер для кнопки "Загрузить еще" */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+/* Кнопка "Загрузить еще" */
+.load-more-button {
+  background-color: #ff9800; /* Оранжевый цвет */
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.load-more-button:hover {
+  background-color: #e68900; /* Темнее при наведении */
+  transform: scale(1.05); /* Небольшое увеличение */
+}
+
+.load-more-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
+  /* Поисковая строка и кнопка фильтра */
   .search-filter-container {
-    flex-direction: column; /* На маленьких экранах элементы располагаются вертикально */
-    align-items: stretch; /* Растягиваем элементы по ширине */
-    gap: 10px; /* Увеличиваем отступы для мобильных устройств */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
 
   .filter-button {
-    width: 100%; /* Кнопка занимает всю ширину */
+    width: 100%;
+  }
+
+  /* Сетка фильмов на маленьких экранах */
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

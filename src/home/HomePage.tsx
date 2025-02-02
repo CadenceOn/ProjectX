@@ -15,49 +15,89 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false); // Состояние для открытия модального окна
+  const [currentPage, setCurrentPage] = useState(1); // Номер текущей страницы
+  const [hasMore, setHasMore] = useState(true); // Флаг наличия следующих страниц
   const { store } = useContext(Context);
 
-  // Получение фильмов и жанров из API
+  // Фильтрация нежелательных фильмов
+  const filterSafeMovies = (movies) => {
+    const bannedGenres = ['Erotic', 'Порнопародия', 'Эротика', 'для взрослых']; // Запрещенные жанры
+    const bannedKeywords = ['для взрослых', 'эротика', 'порнопародия', '18+']; // Запрещенные слова
+
+    return movies.filter((movie) => {
+      const hasBannedGenre = movie.genres?.some((genre) =>
+        bannedGenres.includes(genre.genre)
+      );
+      const hasBannedKeyword = bannedKeywords.some(
+        (keyword) =>
+          movie.nameRu?.toLowerCase().includes(keyword) ||
+          movie.nameEn?.toLowerCase().includes(keyword) ||
+          movie.description?.toLowerCase().includes(keyword)
+      );
+      return !hasBannedGenre && !hasBannedKeyword;
+    });
+  };
+
+  // Получение фильмов из API
   const fetchMovies = async () => {
     setLoading(true);
     try {
-      const response = await store.list.getFilmsFilter({ keyword: searchQuery });
-      const moviesData = response.data.items;
+      const response = await store.list.getFilmsFilter({
+        keyword: searchQuery,
+        page: currentPage, // Указываем текущую страницу
+      });
+      const moviesData = filterSafeMovies(response.data.items || []);
+
+      // Если больше фильмов нет
+      if (moviesData.length === 0) {
+        setHasMore(false);
+      }
+
+      // Обновляем список фильмов
+      setMovies((prev) => [...prev, ...moviesData]);
+      setFilteredMovies((prev) => [...prev, ...moviesData]);
 
       // Извлекаем жанры и страны из фильмов
-      const allGenres = new Set();
-      const allCountries = new Set();
+      const allGenres = new Set(genres);
+      const allCountries = new Set(countries);
       moviesData.forEach((movie) => {
-        movie.genres.forEach((genre) => allGenres.add(genre.genre));
-        movie.countries.forEach((country) => allCountries.add(country.country));
+        if (movie.genres) {
+          movie.genres.forEach((genre) => allGenres.add(genre.genre));
+        }
+        if (movie.countries) {
+          movie.countries.forEach((country) =>
+            allCountries.add(country.country)
+          );
+        }
       });
 
-      setMovies(moviesData);
-      setFilteredMovies(moviesData);
-      setGenres(Array.from(allGenres)); // Сохраняем уникальные жанры
-      setCountries(Array.from(allCountries)); // Сохраняем уникальные страны
+      setGenres(Array.from(allGenres));
+      setCountries(Array.from(allCountries));
+    } catch (error) {
+      console.error('Ошибка загрузки фильмов:', error);
     } finally {
       setLoading(false);
     }
   };
 
   // Фильтрация фильмов по жанрам и странам
-  const handleFilter = (selectedFilters: { genres: string[]; countries: string[] }) => {
-    const { genres: selectedGenres, countries: selectedCountries } = selectedFilters;
+  const handleFilter = (selectedFilters) => {
+    const { genres: selectedGenres, countries: selectedCountries } =
+      selectedFilters;
 
     let filtered = movies;
 
-    // Фильтруем по жанрам
     if (selectedGenres.length > 0) {
       filtered = filtered.filter((movie) =>
-        movie.genres.some((genre) => selectedGenres.includes(genre.genre)),
+        movie.genres.some((genre) => selectedGenres.includes(genre.genre))
       );
     }
 
-    // Фильтруем по странам
     if (selectedCountries.length > 0) {
       filtered = filtered.filter((movie) =>
-        movie.countries.some((country) => selectedCountries.includes(country.country)),
+        movie.countries.some((country) =>
+          selectedCountries.includes(country.country)
+        )
       );
     }
 
@@ -65,39 +105,62 @@ const HomePage = () => {
     setModalOpen(false); // Закрываем модальное окно
   };
 
+  // Загрузка следующей страницы
+  const loadMoreMovies = () => {
+    if (hasMore) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
   useEffect(() => {
     fetchMovies();
-  }, [searchQuery]);
+  }, [currentPage, searchQuery]);
 
   return (
     <div className="home-page">
       <div className="search-filter-container">
-        <SearchBar onSearch={setSearchQuery} />
+        <SearchBar
+          onSearch={(query) => {
+            setSearchQuery(query);
+            setMovies([]); // Очищаем список фильмов при новом поиске
+            setFilteredMovies([]);
+            setCurrentPage(1); // Сбрасываем страницу
+            setHasMore(true); // Сбрасываем флаг наличия следующих страниц
+          }}
+        />
         <button onClick={() => setModalOpen(true)} className="filter-button">
           Фильтр
         </button>
       </div>
-      {loading ? (
+      {loading && currentPage === 1 ? (
         <Loader />
       ) : (
-        <ContainerGrid>
-          {filteredMovies.map((movie) => (
-            <GridPoster
-              id={movie.kinopoiskId}
-              name={movie.nameRu ? movie.nameRu : movie.nameEn}
-              creator={movie.rating}
-              image={movie.posterUrl}
-              key={movie.kinopoiskId}
-            />
-          ))}
-        </ContainerGrid>
+        <>
+          <ContainerGrid>
+            {filteredMovies.map((movie) => (
+              <GridPoster
+                id={movie.kinopoiskId}
+                name={movie.nameRu ? movie.nameRu : movie.nameEn}
+                creator={movie.rating}
+                image={movie.posterUrl}
+                key={movie.kinopoiskId}
+              />
+            ))}
+          </ContainerGrid>
+          {hasMore && !loading && (
+            <div className="load-more-container">
+              <button onClick={loadMoreMovies} className="load-more-button">
+                Загрузить еще
+              </button>
+            </div>
+          )}
+        </>
       )}
-      {/* Модальное окно фильтрации */}
       <FilterModal
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
-        genres={genres} // Передаем список жанров в модальное окно
-        countries={countries} // Передаем список стран в модальное окно
+        genres={genres}
+        countries={countries}
         onApply={handleFilter}
       />
     </div>
