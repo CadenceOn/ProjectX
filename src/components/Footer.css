@@ -1,20 +1,89 @@
-/* Footer.css */
-footer {
-    background-color: #202020;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-body {
+.footer {
+    background-color: #181818;
+    color: #f4f4f4;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-content {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+  }
+  
+  .footer-section {
+    flex: 1 1 30%;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    color: #ff9800;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .footer-section p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ff9800;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: flex-start; /* Горизонтальное размещение */
+    gap: 15px; /* Расстояние между кружками */
+  }
+  
+  .social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Диаметр круга */
+    height: 40px;
+    background-color: #ff9800;
+    border-radius: 50%; /* Делает кнопки круглыми */
+    color: #181818;
+    font-size: 18px; /* Размер иконки */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .social-icons a i {
+    font-size: 20px; /* Размер шрифта иконки внутри */
+  }
+  
+  .social-icons a:hover {
+    background-color: #e68900;
+    transform: scale(1.1); /* Легкое увеличение при наведении */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
