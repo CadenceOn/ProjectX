@@ -1,12 +1,13 @@
 // src/favorites/FavoritesPage.tsx
 import React, { useContext } from "react";
 import { observer } from "mobx-react-lite";
+import { Link } from "react-router-dom";
 import { Context } from "../store/context";
 import styled from "styled-components";
 import './FavoritesPage.css';
 
 const FavoritesPage = () => {
-    const { store } = useContext(Context); // Получаем store из контекста
+    const { store } = useContext(Context);
 
     return (
         <Container>
@@ -15,16 +16,17 @@ const FavoritesPage = () => {
                 <Grid>
                     {store.bookmarks.map((movie) => (
                         <Card key={movie.filmId}>
-                            <Poster image={movie.image} />
-                            <Details>
-                                <h3>{movie.name}</h3>
-                                <p>{movie.rating}</p>
-                                <RemoveButton
-                                    onClick={() => store.toggleBookmark(movie)}
-                                >
-                                    Удалить из закладок
-                                </RemoveButton>
-                            </Details>
+                            {/* Оборачиваем часть карточки в Link для навигации */}
+                            <StyledLink to={`/project_x/movies/${movie.filmId}`}>
+                                <Poster image={movie.image} />
+                                <Details>
+                                    <h3>{movie.name}</h3>
+                                    <p>{movie.rating}</p>
+                                </Details>
+                            </StyledLink>
+                            <RemoveButton onClick={() => store.toggleBookmark(movie)}>
+                                Удалить из закладок
+                            </RemoveButton>
                         </Card>
                     ))}
                 </Grid>
@@ -37,8 +39,7 @@ const FavoritesPage = () => {
 
 export default observer(FavoritesPage);
 
-
-// Стили для FavoritesPage.tsx
+// Стили
 const Container = styled.div`
     padding: 20px;
     color: var(--white);
@@ -62,6 +63,14 @@ const Card = styled.div`
     overflow: hidden;
     text-align: center;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `;
 
 const Poster = styled.div<{ image: string }>`
@@ -91,6 +100,7 @@ const RemoveButton = styled.button`
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    margin-top: 10px;
 
     &:hover {
         background-color: #ff2222;
