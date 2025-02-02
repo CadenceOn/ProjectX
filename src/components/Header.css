@@ -17,9 +17,11 @@
 
 /* Логотип контейнер */
 .logo-container {
+    
     display: flex;
     align-items: center;
     gap: 10px; /* Расстояние между логотипом и текстом */
+    margin: 0 auto;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -31,7 +33,7 @@
 /* Логотип */
 .logo {
     height: 40px;    
-    max-width: 90px;
+    max-width: 100px;
 }
 
 /* Заголовок рядом с логотипом */

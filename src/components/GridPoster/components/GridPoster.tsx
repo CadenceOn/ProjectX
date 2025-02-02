@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Импорт анимации
 import { Context } from '../../../store/context';
 import { observer } from 'mobx-react-lite';
 import { Bookmarks } from '../../../api/types';
@@ -28,7 +29,11 @@ export const GridPoster = observer(({ ...props }: Props) => {
   };
 
   return (
-    <Block>
+    <MotionBlock
+      initial={{ opacity: 0, y: 20 }} // Начальное состояние
+      animate={{ opacity: 1, y: 0 }} // Конечное состояние
+      transition={{ duration: 0.4, ease: 'easeOut' }} // Длительность анимации
+    >
       <BookmarksButton
         image={
           store.bookmarks.some((item) => item.filmId === filmObjectData.filmId)
@@ -42,20 +47,29 @@ export const GridPoster = observer(({ ...props }: Props) => {
       <Container
         onClick={() => {
           navigate(`/project_x/movies/${props.id}`);
-        }}>
+        }}
+      >
         <Image image={props.image} />
         <Creator>{props.creator}</Creator>
         <Name>{props.name}</Name>
       </Container>
-    </Block>
+    </MotionBlock>
   );
 });
+
+// Используем motion.div для анимации
+const MotionBlock = styled(motion.div)`
+  min-width: 100%;
+  max-width: 100%;
+  position: relative;
+`;
 
 const Block = styled.div`
   min-width: 100%;
   max-width: 100%;
   position: relative;
 `;
+
 const Image = styled.div`
   width: 100%;
   height: 23vw;

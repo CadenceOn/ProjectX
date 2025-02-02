@@ -4,7 +4,9 @@
   margin: 0 auto;
   font-family: Arial, sans-serif;
   color: #f4f4f4;
+
 }
+
 
 /* Сетка карточек фильмов */
 .movie-grid {
@@ -13,6 +15,23 @@
   gap: 20px; /* Расстояние между карточками */
   margin-top: 20px;
 }
+
+.movie-grid div {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -33,18 +52,30 @@
 }
 
 .filter-button {
-  background-color: #ff9800;
+  /* background-color: #ff9800;
   color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; */
+
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+
 }
 
 .filter-button:hover {
-  background-color: #e68900;
+  background-color: transparent;
+  color: #ff9800;
+  border: 2px solid #ff9800;
 }
 
 @media (max-width: 768px) {

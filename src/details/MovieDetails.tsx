@@ -114,7 +114,8 @@ const MovieDetails = () => {
           })}
         </div>
       </div>
-      <iframe className="moviePlayer" src={playerUrls[playerNumber]}></iframe>
+      <iframe className="moviePlayer" src={playerUrls[playerNumber]} allowFullScreen>
+      </iframe>
     </div>
   );
 };
