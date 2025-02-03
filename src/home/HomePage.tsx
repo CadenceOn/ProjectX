@@ -74,7 +74,7 @@ const HomePage = () => {
       <div className="search-filter-container">
         <SearchBar onSearch={setSearchQuery} />
         <button onClick={() => setModalOpen(true)} className="filter-button">
-          Фильтр
+          <img src={require('../assets/filter.png')} alt="Filter" className="filter-icon" />
         </button>
       </div>
       {loading ? (

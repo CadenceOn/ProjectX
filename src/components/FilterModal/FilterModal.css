@@ -86,3 +86,10 @@
 .countries-list input[type='checkbox'] {
   margin-right: 10px;
 }
+
+.filter-icon {
+  width: 30px; /* Размер изображения */
+  height: 30px;
+  cursor: pointer; /* Чтобы изображение выглядело как кнопка */
+  object-fit: contain; /* Если изображение должно сохранять пропорции */
+}
