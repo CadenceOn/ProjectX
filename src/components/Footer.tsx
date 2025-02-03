@@ -1,10 +1,10 @@
-import React from "react";
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
 
-// Импортируем SVG-файлы
-import FacebookIcon from "../assets/facebook-svgrepo-com (2).svg";
-import TwitterIcon from "../assets/twitter-round-svgrepo-com.svg";
-import InstagramIcon from "../assets/instagram-round-svgrepo-com.svg";
+// Импорт SVG через require
+const FacebookIcon = require('../assets/facebook-svgrepo-com (2).svg').default;
+const TwitterIcon = require('../assets/twitter-round-svgrepo-com.svg').default;
+const InstagramIcon = require('../assets/instagram-round-svgrepo-com.svg').default;
 
 const Footer = () => {
   return (
@@ -13,17 +13,23 @@ const Footer = () => {
         <div className="footer-section about">
           <h3>Kinopoisk Clone</h3>
           <p>
-            Ваш лучший источник для поиска фильмов, сериалов и другой информации
-            о кино. Наслаждайтесь просмотром!
+            Ваш лучший источник для поиска фильмов, сериалов и другой информации о кино.
+            Наслаждайтесь просмотром!
           </p>
         </div>
 
         <div className="footer-section links">
           <h3>Полезные ссылки</h3>
           <ul>
-            <li><a href="project_x/about">Контакты</a></li>
-            <li><a href="/privacy">Политика конфиденциальности</a></li>
-            <li><a href="/terms">Условия использования</a></li>
+            <li>
+              <a href="project_x/about">Контакты</a>
+            </li>
+            <li>
+              <a href="/privacy">Политика конфиденциальности</a>
+            </li>
+            <li>
+              <a href="/terms">Условия использования</a>
+            </li>
           </ul>
         </div>
 
