@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="footer-section links">
           <h3>Полезные ссылки</h3>
           <ul>
-            <li><a href="project_x/about">Контакты</a></li>
+            <li><a href="../about">Контакты</a></li>
             <li><a href="/privacy">Политика конфиденциальности</a></li>
             <li><a href="/terms">Условия использования</a></li>
           </ul>
