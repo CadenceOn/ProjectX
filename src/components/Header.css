@@ -1,25 +1,108 @@
-/* Header */
-header {
+/* Общие стили для Header */
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #202020;
+}
+.header {
+    width: 90%;
     color: #f4f4f4;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 90px;
 }
 
+/* Логотип контейнер */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между логотипом и текстом */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+}
+
+/* Логотип */
+.logo {
+    height: 40px;    
+    max-width: 90px;
+}
+
+/* Заголовок рядом с логотипом */
 header h1 {
     font-size: 1.5rem;
     color: #ff9800;
+    margin: 0; /* Убираем лишние отступы */
+    line-height: 1; /* Выравниваем по высоте */
+    user-select: none;
+}
+
+/* Навигационная панель */
+header nav {
+    display: flex;
+    align-items: center; /* Центрируем элементы по вертикали */
+    gap: 20px; /* Расстояние между ссылками */
 }
 
 header nav a {
-    margin-left: 15px;
+    font-size: 1rem; /* Единый размер текста для ссылок */
     color: #f4f4f4;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 header nav a:hover {
+    color: #ff9800;
+}
+
+/* Активная ссылка */
+header nav a.active {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+}
+
+/* Контейнер для избранного */
+.favorites-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Кружок с количеством фильмов */
+.favorites-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 50%; /* Делаем элемент круглым */
+    padding: 5px 8px; /* Внутренние отступы */
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    min-width: 20px; /* Минимальная ширина */
+    height: 20px; /* Фиксированная высота */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 1; /* По умолчанию видимая */
+}
+.nav-link{
+    user-select: none;
+    cursor: pointer;
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+.favorites-container a:hover {
     color: #ff9800;
 }

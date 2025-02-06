@@ -1,0 +1,68 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Темный фон с прозрачностью */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1e1e1e; /* Темный фон модального окна */
+  color: #ffffff; /* Белый текст */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px; /* Уменьшенная ширина */
+  max-width: 90%;
+  height: 70vh; /* Устанавливаем высоту окна */
+  max-height: 70vh; /* Максимальная высота для адаптивности */
+  overflow: hidden; /* Скрываем выходящий за пределы контент */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.genres-list {
+  flex: 1; /* Жанры занимают оставшееся пространство */
+  margin: 20px 0;
+  text-align: left;
+  overflow-y: auto; /* Добавляем вертикальный скроллинг */
+  padding-right: 10px; /* Отступ для скроллбара */
+}
+
+.genres-list label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ffffff; /* Белый текст для жанров */
+  cursor: pointer;
+}
+
+.genres-list input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button:hover {
+  background-color: #e68900;
+}

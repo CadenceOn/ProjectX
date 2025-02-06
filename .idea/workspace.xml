@@ -63,6 +63,9 @@
     &quot;accountId&quot;: &quot;329bef40-aa8e-4db8-9489-5a77cb0e7f06&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/index.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -74,7 +77,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "<unknown>",
     "javascript.nodejs.core.library.configured.version": "22.11.0",
     "javascript.nodejs.core.library.typings.version": "22.10.2",
     "list.type.of.created.stylesheet": "CSS",
@@ -145,7 +149,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -161,6 +165,7 @@
       <workItem from="1735339491402" duration="5013000" />
       <workItem from="1735344611801" duration="1707000" />
       <workItem from="1735369764436" duration="9727000" />
+      <workItem from="1736338485136" duration="30000" />
     </task>
     <servers />
   </component>

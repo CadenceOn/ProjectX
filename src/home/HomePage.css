@@ -1,17 +1,60 @@
 /* src/home/HomePage.css */
 .home-page {
-    padding: 20px;
-    max-width: 90%;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    color: #f4f4f4;
+  padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #f4f4f4;
 }
 
 /* Сетка карточек фильмов */
 .movie-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
-    gap: 20px; /* Расстояние между карточками */
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+  gap: 20px; /* Расстояние между карточками */
+  margin-top: 20px;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
 
+.logo {
+  width: 150px; /* Задайте нужный размер */
+  height: auto;
+}
+
+.search-filter-container {
+  display: flex; /* Размещаем элементы горизонтально */
+  align-items: center; /* Выравниваем элементы по вертикали */
+  gap: 30px; /* Отступ между поисковой строкой и кнопкой */
+  margin-bottom: 20px; /* Отступ снизу для разделения с остальным контентом */
+}
+
+.filter-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #e68900;
+}
+
+@media (max-width: 768px) {
+  .search-filter-container {
+    flex-direction: column; /* На маленьких экранах элементы располагаются вертикально */
+    align-items: stretch; /* Растягиваем элементы по ширине */
+    gap: 10px; /* Увеличиваем отступы для мобильных устройств */
+  }
+
+  .filter-button {
+    width: 100%; /* Кнопка занимает всю ширину */
+  }
+}

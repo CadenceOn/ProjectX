@@ -6,14 +6,25 @@
 }
 
 /* Основные стили для приложения */
-html, body {
+html,
+body {
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #181818;
     color: #f4f4f4;
     line-height: 1.6;
 }
-
+#app {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.centerContent {
+    flex: 1 1 auto;
+    width: 90%;
+    height: max-content !important;
+}
 /* Контейнер */
 .container {
     max-width: 1200px;
@@ -22,7 +33,12 @@ html, body {
 }
 
 /* Заголовки */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 10px;
     font-weight: bold;
     color: #f4f4f4;
@@ -83,4 +99,3 @@ button:hover {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
-
