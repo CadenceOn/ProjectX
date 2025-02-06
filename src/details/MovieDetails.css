@@ -8,7 +8,9 @@
 }
 .playerButtonContainer {
   display: flex;
-  gap: 10px;
+  
+  gap: 10px;           /* Расстояние между кнопками */
+  margin: 16px 0;
 }
 .playerControlPanel h1 {
   font-size: 20px;
@@ -17,8 +19,20 @@
   display: flex;
   gap: 10px;
 }
+
+
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../../src/assets/fonts/fa-brands-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .buttonPlayer {
-  display: flex;
+ 
+  display: inline-flex;  
   align-items: center;
   justify-content: center;
   width: 50px;
@@ -28,6 +42,23 @@
   background-color: #ff9800;
   border-radius: 10px;
   font-size: 20px;
+  font-family: 'MyCustomFont';
+}
+
+
+.player-label {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  font-family: 'MyCustomFont';
+}
+
+.player-number {
+  font-size: 12px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  font-family: 'MyCustomFont';
+
 }
 
 .movie-details-container {

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import './MovieDetails.css';
 import { Context } from '../store/context';
 import RatingComponent from '../components/RatingComponent';
+import ScreenshotCarousel from '../components/ScreenshotCarousel';
+
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -12,6 +14,9 @@ const MovieDetails = () => {
   const [playerUrls, setPlayerUrls] = useState<string[]>([]);
   const [playerNumber, setPlayerNumber] = useState(0);
   const { store } = useContext(Context);
+  const [movieImages, setMovieImages] = useState<string[]>([]);
+
+  
 
   const fetchMovieDetails = async () => {
     try {
@@ -38,12 +43,31 @@ const MovieDetails = () => {
           );
         }
       });
+
+
+            //Запрос скриншотов 
+      
+      const responseImages = await store.movie.getImages(
+        { id: Number(id) },
+        { type: 'SCREENSHOT', page: 1 }
+      );
+
+      // Берём все или первые 10 ):
+      const screenshots = responseImages.data.items.slice(0,10).map((img: any) => img.imageUrl);
+      
+      setMovieImages(screenshots);
+
+
     } catch (err) {
       setError('Failed to fetch movie details');
     } finally {
       setLoading(false);
     }
   };
+
+
+  
+
 
   useEffect(() => {
     fetchMovieDetails();
@@ -52,6 +76,12 @@ const MovieDetails = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!movie) return <p>No movie found.</p>;
+
+
+
+  
+
+
 
   return (
     <div>
@@ -96,8 +126,16 @@ const MovieDetails = () => {
         </div>
       </div>
 
+
+       {/* --- Карточка со скриншотами (слайдер) --- */}
+       {movieImages.length > 0 && (
+        <ScreenshotCarousel images={movieImages} />
+      )}
+
       <a href={`https://flicksbar.mom/film/${id}`}>Смотреть на Flicksbar</a>
+
       <div className="playerControlPanel">
+    
         <h1>Выберите плеер.</h1>
         <div className="playerButtonContainer">
           {playerUrls.map((item, i) => {
@@ -108,7 +146,8 @@ const MovieDetails = () => {
                 onClick={() => {
                   setPlayerNumber(i);
                 }}>
-                {i}
+                      <span className="player-label">Плеер</span>
+                      <span className="player-number">{i + 1}</span>
               </div>
             );
           })}
