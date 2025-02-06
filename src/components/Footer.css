@@ -1,20 +1,194 @@
-/* Footer.css */
-footer {
-    background-color: #202020;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+.footer {
+  background-color: #181818;
+  color: #f4f4f4;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
 }
 
-main {
-    flex: 1;
+.footer-section {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  color: #ff9800;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ff9800;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ff9800;
+  border-radius: 50%;
+  color: #181818;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.social-icons a:hover {
+  background-color: #e68900;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #f4f4f4;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  font-family: inherit;
+}
+
+.link-button:hover {
+  color: #ff9800;
+}
+
+/* Задний фон модального окна */
+.modall-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Контейнер модального окна */
+.modall-content {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: zoomIn 0.5s ease-out;
+  color: #ffffff;
+}
+
+/* Текст внутри модального окна */
+.modall-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff9800;
+}
+
+/* Стиль для списка в модальном окне */
+.modall-text ol {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.modall-text ol li {
+  margin-bottom: 15px; /* Увеличивает расстояние между пунктами */
+  line-height: 1.6; /* Увеличивает межстрочный интервал */
+  color: #e0e0e0; /* Светло-серый цвет текста */
+}
+
+.modall-text ol li strong {
+  color: #f9a825; /* Выделение ключевых слов оранжевым цветом */
+}
+
+/* Добавление отступов для абзацев */
+.modall-text p {
+  margin-top: 10px;
+  line-height: 1.8;
+  color: #dcdcdc;
+}
+
+.modall-text a {
+  color: #ff9800;
+  text-decoration: none;
+}
+
+.modall-text a:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка закрытия */
+.modall-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modall-close:hover {
+  color: #ff9800;
+}
+
+/* Анимация появления */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
