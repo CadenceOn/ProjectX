@@ -8,26 +8,26 @@ import IBImage from '../assets/IB.jpg';
 // Данные о членах команды
 const teamMembers = [
   {
-    name: 'АE',
-    role: 'не придумал',
+    name: 'Тихонов Артур',
+    role: 'Team Lead ',
     description: 'AE - талантливый разработчик и отличный собеседник.',
     image: AEImage,
   },
   {
-    name: 'NM',
-    role: 'просто чиловый парень',
+    name: 'Маликов Нурджахон',
+    role: 'Frontend developer',
     description: 'NM - любитель котов, чилловой музыки и приятных разговоров.',
     image: NMImage,
   },
   {
-    name: 'ON',
-    role: 'не придумал',
+    name: 'Нимец Олег',
+    role: 'Frontend developer,System Analyst',
     description: 'ON - разработчик с глубокими знаниями и аналитическим подходом.',
     image: ONImage,
   },
   {
-    name: 'IB',
-    role: 'не придумал',
+    name: 'Бесчастнов Игорь',
+    role: 'Frontend developer',
     description: 'IB - креативный человек с нестандартным мышлением.',
     image: IBImage,
   },
@@ -37,11 +37,11 @@ const AboutPage: React.FC = () => {
   const [selectedMember, setSelectedMember] = useState<null | (typeof teamMembers)[0]>(null);
 
   const handleCardClick = (member: (typeof teamMembers)[0]) => {
-    setSelectedMember(member); // Устанавливаем выбранного участника
+    setSelectedMember(member);
   };
 
   const closeModal = () => {
-    setSelectedMember(null); // Закрываем модальное окно
+    setSelectedMember(null); 
   };
 
   return (
@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
           <div
             className="team-card"
             key={index}
-            onClick={() => handleCardClick(member)} // Открываем модальное окно
+            onClick={() => handleCardClick(member)} 
           >
             <img src={member.image} alt={member.name} className="team-image" />
             <h2>{member.name}</h2>
