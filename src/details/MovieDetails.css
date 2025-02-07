@@ -85,7 +85,7 @@
 .movie-info .awards-section h2,
 .movie-info .box-office-section h2 {
   font-size: 16px; /* Увеличенный размер заголовка */
-  color: #ff9800; /* Цвет заголовка */
+  color: #f4f4f4; /* Цвет заголовка */
   margin-bottom: 6px; /* Отступ снизу */
 }
 
