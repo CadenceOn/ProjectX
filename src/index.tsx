@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 /* eslint-disable react/display-name */
 import React from 'react';
 import ReactDOM from 'react-dom/client';

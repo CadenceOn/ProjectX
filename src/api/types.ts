@@ -199,7 +199,7 @@ export type GenreType1 = {
   
   export interface Video {
     total: number;
-    items: any[];
+    items: string[];
   }
   
   interface Movie1 {

@@ -19,7 +19,7 @@ type Props = {
 
 export const GridPoster = observer(({ ...props }: Props) => {
   const { store } = useContext(Context);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const filmObjectData: Bookmarks = {
     filmId: props.id,

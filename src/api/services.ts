@@ -205,7 +205,7 @@ export class ListMovie {
     }
 
     static async getSearch({
-        page,
+       
         keyword,
     }: types.SearchByKeywordParams): Promise<
         AxiosResponse<types.SearchByKeyword>
