@@ -64,6 +64,27 @@
 
 }
 
+.buttonPlayer:hover {
+  background-color: #cc7a00; /* Изменение цвета при наведении */
+}
+
+.movie-info .awards-section button {
+  padding: 8px 12px; /* Уменьшаем внутренние отступы */
+  font-size: 14px; /* Уменьшаем размер текста */
+  margin-top: 10px; /* Увеличьте значение для большего отступа */
+  margin-bottom: 16px; /* Отступ снизу */
+  background-color: #ff9800; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  border: none; /* Убираем границу */
+  border-radius: 5px; /* Скругляем углы */
+  cursor: pointer; /* Указываем, что это кнопка */
+  transition: background-color 0.3s ease; /* Добавляем плавный переход для фона */
+}
+
+.movie-info .awards-section button:hover {
+  background-color: #cc7a00; /* Изменение цвета при наведении */
+}
+
 .movie-details-container {
   display: flex;
   gap: 20px;
@@ -139,6 +160,14 @@
   margin-top: 10px;
   font-size: 0.9rem;
   color: #ffffff;
+}
+
+/* Заголовки для секций Награды и Кассовые сборы */
+.movie-info .awards-section h2,
+.movie-info .box-office-section h2 {
+  font-size: 16px; /* Увеличенный размер заголовка */
+  color: #ff9800; /* Цвет заголовка */
+  margin-bottom: 6px; /* Отступ снизу */
 }
 
 @media (max-width: 768px) {
