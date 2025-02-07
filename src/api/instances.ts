@@ -4,7 +4,8 @@ import { baseUrl } from "./const";
 export const $kinopoisk_api_public = axios.create({
     baseURL: baseUrl,
     headers: {
-        "X-API-KEY": "d64d7150-d705-495a-a8fd-d73fa05e39a5",
+        "X-API-KEY": "e8dab39e-c89d-4804-8a7b-fb7c8cac5ffa",  // e8dab39e-c89d-4804-8a7b-fb7c8cac5ffa
+        // d64d7150-d705-495a-a8fd-d73fa05e39a5
     },
 });
 
