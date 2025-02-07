@@ -9,6 +9,9 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [awards, setAwards] = useState([]);
+  const [boxOffice, setBoxOffice] = useState([]);
+  const [showAllAwards, setShowAllAwards] = useState(false);
   const [playerUrls, setPlayerUrls] = useState<string[]>([]);
   const [playerNumber, setPlayerNumber] = useState(0);
   const { store } = useContext(Context);
@@ -24,6 +27,15 @@ const MovieDetails = () => {
         .catch(() => {
           setError('Error');
         });
+        // Получение наград
+    store.movie.getAwards({ id: Number(id) }).then((response) => {
+      setAwards(response.data.items || []);
+    });
+
+    // Получение кассовых сборов
+    store.movie.getBoxOffice({ id: Number(id) }).then((response) => {
+      setBoxOffice(response.data.items || []);
+    });
       store.watchMovie.getPlayerInfo({ id: Number(id) }).then((response) => {
         console.log('response', response);
         if (response.data.data && Array.isArray(response.data.data)) {
@@ -93,6 +105,41 @@ const MovieDetails = () => {
             <h4>Ваш рейтинг:</h4>
             <RatingComponent movieId={id} />
           </div>
+          <div className="movie-extras">
+        <div className="awards-section">
+          <h2>Награды</h2>
+          {awards && awards.length > 0 ? (
+          <>
+          <ul className={`awards-list ${showAllAwards ? 'expanded' : 'collapsed'}`}>
+            {awards.slice(0, showAllAwards ? awards.length : 3).map((award, index) => (
+              <li key={index}>
+                {award.nominationName} ({award.year}) - {award.win ? 'Победа' : 'Номинация'}
+              </li>
+            ))}
+          </ul>
+          {awards.length > 3 && (
+            <button onClick={() => setShowAllAwards(!showAllAwards)}>
+              {showAllAwards ? 'Свернуть' : 'Развернуть'}
+            </button>
+          )}
+          </>
+          ): (<p>Данные о наградах недоступны</p>)}
+        </div>
+
+        <div className="box-office-section">
+          <h2>Кассовые сборы</h2>
+          {boxOffice && boxOffice.length > 0 ? (
+          <ul>{boxOffice.map((entry, index) => (
+              <li key={index}>
+              {entry.name ? `${entry.name}: ` : ''} {/* Страна */}
+              {entry.amount} {entry.currencyCode} {entry.symbol} {/* Сумма и валюта */}
+              {entry.type ? ` (${entry.type})` : ''} {/* Тип сборов */}
+            </li>
+            ))}
+          </ul>
+          ): (<p>Данные о кассовых сборах недоступны</p>)}
+        </div>
+      </div>
         </div>
       </div>
 
