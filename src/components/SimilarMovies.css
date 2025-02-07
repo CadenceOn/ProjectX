@@ -1,18 +1,16 @@
-
-  
-  .similar-movies-title {
+.similar-movies-title {
     color: #ff9800; /* Цвет заголовка */
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  
-  .similar-movies-grid {
+}
+
+.similar-movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-  }
-  
-  .movie-card {
+}
+
+.movie-card {
     background-color: #595959; /*фон для карточек */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -20,32 +18,31 @@
     cursor: pointer; /* Указатель при наведении */
     overflow: hidden;
     text-align: center;
-  }
-  
-  .movie-card:hover {
+}
+
+.movie-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .movie-poster {
+}
+
+.movie-poster {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #595959;
     transition: transform 0.3s ease;
-  }
-  
-  .movie-card:hover .movie-poster {
+}
+
+.movie-card:hover .movie-poster {
     transform: scale(1.05);
-  }
-  
-  .movie-name {
+}
+
+.movie-name {
     color: #333;
     font-size: 18px;
     margin: 10px 0;
-  }
-  
-  .movie-year {
+}
+
+.movie-year {
     color: #777;
     font-size: 14px;
-  }
-  
+}

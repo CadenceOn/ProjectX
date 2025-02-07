@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import loupe from '../assets/loupe.png';
 
 const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
   const [query, setQuery] = useState('');
@@ -12,7 +13,7 @@ const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
   return (
     <form className="search-bar" onSubmit={handleSearch}>
       <button type="submit" className="search-button">
-        <img src={require('../assets/loupe.png')} alt="Search" className="search-icon" />
+        <img src={loupe} alt="Search" className="search-icon" />
       </button>
       <input
         type="text"

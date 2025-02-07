@@ -1,204 +1,195 @@
 .moviePlayer {
-  width: 100%;
-  height: 50vw;
+    width: 100%;
+    height: 50vw;
 }
 
 .playerControlPanel {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .playerButtonContainer {
-  display: flex;
-  
-  gap: 10px;           /* Расстояние между кнопками */
-  margin: 16px 0;
+    display: flex;
+
+    gap: 10px; /* Расстояние между кнопками */
+    margin: 16px 0;
 }
 
 .playerControlPanel h1 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .playerButtonContainer {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
-
-
 
 @font-face {
-  font-family: 'MyCustomFont';
-  src: url('../../src/assets/fonts/fa-brands-400.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+    font-family: "MyCustomFont";
+    src: url("../../src/assets/fonts/fa-brands-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
 }
-
 
 .buttonPlayer {
- 
-  display: inline-flex;  
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  user-select: none;
-  cursor: pointer;
-  background-color: #ff9800;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: 'MyCustomFont';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    user-select: none;
+    cursor: pointer;
+    background-color: #ff9800;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "MyCustomFont";
 }
 
-
 .player-label {
-  font-size: 15px;
-  line-height: 1.2;
-  margin-bottom: 2px;
-  font-family: 'MyCustomFont';
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    font-family: "MyCustomFont";
 }
 
 .player-number {
-  font-size: 12px;
-  line-height: 1.2;
-  margin-bottom: 2px;
-  font-family: 'MyCustomFont';
-
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    font-family: "MyCustomFont";
 }
 
 .buttonPlayer:hover {
-  background-color: #cc7a00; /* Изменение цвета при наведении */
+    background-color: #cc7a00; /* Изменение цвета при наведении */
 }
 
 .movie-info .awards-section button {
-  padding: 8px 12px; /* Уменьшаем внутренние отступы */
-  font-size: 14px; /* Уменьшаем размер текста */
-  margin-top: 10px; /* Увеличьте значение для большего отступа */
-  margin-bottom: 16px; /* Отступ снизу */
-  background-color: #ff9800; /* Цвет фона */
-  color: #fff; /* Цвет текста */
-  border: none; /* Убираем границу */
-  border-radius: 5px; /* Скругляем углы */
-  cursor: pointer; /* Указываем, что это кнопка */
-  transition: background-color 0.3s ease; /* Добавляем плавный переход для фона */
+    padding: 8px 12px; /* Уменьшаем внутренние отступы */
+    font-size: 14px; /* Уменьшаем размер текста */
+    margin-top: 10px; /* Увеличьте значение для большего отступа */
+    margin-bottom: 16px; /* Отступ снизу */
+    background-color: #ff9800; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругляем углы */
+    cursor: pointer; /* Указываем, что это кнопка */
+    transition: background-color 0.3s ease; /* Добавляем плавный переход для фона */
 }
 
 .movie-info .awards-section button:hover {
-  background-color: #cc7a00; /* Изменение цвета при наведении */
+    background-color: #cc7a00; /* Изменение цвета при наведении */
 }
 
 .movie-details-container {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .movie-poster {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .movie-info {
-  flex: 1;
-  color: #f4f4f4;
-  font-size: 16px;
-  line-height: 1.6;
+    flex: 1;
+    color: #f4f4f4;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .movie-info h1 {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #ff9800;
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #ff9800;
 }
 
 .movie-info p {
-  margin: 8px 0;
+    margin: 8px 0;
 }
 
-
-
-
 .similar-movies-section {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #181818;
-  border-radius: 8px;
-  border: 1px solid #333;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #181818;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
 .similar-movies-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #ff9800;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ff9800;
 }
 
 .similar-movies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 500px));
+    gap: 15px;
 }
 
 .similar-movie-card {
-  text-align: center;
-  background-color: #272727;
-  padding: 10px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #272727;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .similar-movie-card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .similar-movie-poster {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
 
 .similar-movie-title {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #ffffff;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
 }
 
 /* Заголовки для секций Награды и Кассовые сборы */
 .movie-info .awards-section h2,
 .movie-info .box-office-section h2 {
-  font-size: 16px; /* Увеличенный размер заголовка */
-  color: #ff9800; /* Цвет заголовка */
-  margin-bottom: 6px; /* Отступ снизу */
+    font-size: 16px; /* Увеличенный размер заголовка */
+    color: #ff9800; /* Цвет заголовка */
+    margin-bottom: 6px; /* Отступ снизу */
 }
 
 @media (max-width: 768px) {
-  .movie-details-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .movie-details-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .movie-poster {
-    width: 100%;
-    max-width: 300px;
-  }
+    .movie-poster {
+        width: 100%;
+        max-width: 300px;
+    }
 
-  .movie-info {
-    text-align: center;
-  }
+    .movie-info {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
-  .playerButtonContainer {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .playerButtonContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-  .buttonPlayer {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
+    .buttonPlayer {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
 
-  .similar-movies-grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
+    .similar-movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }

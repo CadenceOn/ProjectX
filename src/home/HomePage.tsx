@@ -6,6 +6,7 @@ import { ContainerGrid } from '../components/ContainerGrid';
 import { Context } from '../store/context';
 import { GridPoster } from '../components/GridPoster/components/GridPoster';
 import FilterModal from '../components/FilterModal/FilterModal';
+import filter from '../assets/filter.png'
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]); // Полный список фильмов
@@ -129,7 +130,7 @@ const HomePage = () => {
           }}
         />
         <button onClick={() => setModalOpen(true)} className="filter-button">
-          <img src={require('../assets/filter.png')} alt="Filter" className="filter-icon" />
+          <img src={filter} alt="Filter" className="filter-icon" />
         </button>
       </div>
       {loading && currentPage === 1 ? (

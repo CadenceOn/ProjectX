@@ -9,9 +9,9 @@ const MovieDetails = () => {
   const { store } = useContext(Context);
 
   // Стейт для деталей фильма
-  const [movie, setMovie] = useState<any>(null);
+  const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
 
   // Стейт для URL плееров
   const [playerUrls, setPlayerUrls] = useState<string[]>([]);
@@ -32,7 +32,7 @@ const MovieDetails = () => {
       const playerInfoResponse = await store.watchMovie.getPlayerInfo({ id: Number(id) });
       if (playerInfoResponse.data.data && Array.isArray(playerInfoResponse.data.data)) {
         const urls = playerInfoResponse.data.data
-          .map((item: any) => item?.iframeUrl)
+          .map((item) => item?.iframeUrl)
           .filter((url: string | undefined) => url !== undefined) as string[];
         setPlayerUrls(urls);
       }
@@ -44,11 +44,11 @@ const MovieDetails = () => {
       );
 
       // Вытаскиваем первые 10 картинок (можно больше/меньше)
-      const images = imagesResponse.data.items.slice(0, 10).map((img: any) => img.imageUrl);
+      const images = imagesResponse.data.items.slice(0, 10).map((img) => img.imageUrl);
       setMovieImages(images);
 
       setError(null);
-    } catch (err) {
+    } catch{
       setError('Ошибка при загрузке информации о фильме');
     } finally {
       setLoading(false);
@@ -57,7 +57,6 @@ const MovieDetails = () => {
 
   useEffect(() => {
     fetchMovieDetails();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (loading) return <p>Loading...</p>;
@@ -76,7 +75,7 @@ const MovieDetails = () => {
           </p>
           <p>
             <strong>Жанр:</strong>{' '}
-            {movie.genres.map((genre: any, index: number) => (
+            {movie.genres.map((genre, index: number) => (
               <span key={index}>
                 {genre.genre}
                 {index < movie.genres.length - 1 && ', '}
@@ -85,7 +84,7 @@ const MovieDetails = () => {
           </p>
           <p>
             <strong>Страна:</strong>{' '}
-            {movie.countries.map((country: any, index: number) => (
+            {movie.countries.map((country, index: number) => (
               <span key={index}>
                 {country.country}
                 {index < movie.countries.length - 1 && ', '}

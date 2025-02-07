@@ -8,7 +8,7 @@ import ScreenshotCarousel from "../components/ScreenshotCarousel";
 const MovieDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [movie, setMovie] = useState<any>(null);
+  const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [awards, setAwards] = useState([]);
@@ -16,7 +16,7 @@ const MovieDetails = () => {
   const [showAllAwards, setShowAllAwards] = useState(false);
   const [playerUrls, setPlayerUrls] = useState<string[]>([]);
   const [playerNumber, setPlayerNumber] = useState(0);
-  const [similarMovies, setSimilarMovies] = useState<any[]>([]);
+  const [similarMovies, setSimilarMovies] = useState([]);
   const [movieImages, setMovieImages] = useState<string[]>([]);
   const { store } = useContext(Context);
 
@@ -69,7 +69,7 @@ const MovieDetails = () => {
       // Получение плееров
       const playerResponse = await store.watchMovie.getPlayerInfo({ id: numericId });
       const playerData = playerResponse?.data?.data || [];
-      setPlayerUrls(playerData.map((item: any) => item.iframeUrl).filter(Boolean));
+      setPlayerUrls(playerData.map((item) => item.iframeUrl).filter(Boolean));
 
       // Получение скриншотов
       const responseImages = await store.movie.getImages(
@@ -79,7 +79,7 @@ const MovieDetails = () => {
       if (responseImages?.data?.items) {
         const screenshots = responseImages.data.items
           .slice(0, 10)
-          .map((img: any) => img.imageUrl);
+          .map((img) => img.imageUrl);
         setMovieImages(screenshots);
       }
 
@@ -118,7 +118,7 @@ const MovieDetails = () => {
           </p>
           <p>
             <strong>Жанр:</strong>{" "}
-            {movie.genres?.map((genre: any, index: number) => (
+            {movie.genres?.map((genre, index: number) => (
               <span key={index}>
                 {genre.genre}
                 {index < movie.genres.length - 1 && ", "}
@@ -127,7 +127,7 @@ const MovieDetails = () => {
           </p>
           <p>
             <strong>Страна:</strong>{" "}
-            {movie.countries?.map((country: any, index: number) => (
+            {movie.countries?.map((country, index: number) => (
               <span key={index}>
                 {country.country}
                 {index < movie.countries.length - 1 && ", "}
