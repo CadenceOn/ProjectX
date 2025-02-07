@@ -2,21 +2,22 @@
   width: 100%;
   height: 50vw;
 }
+
 .playerControlPanel {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
+
+.playerControlPanel h1 {
+  font-size: 20px;
+}
+
 .playerButtonContainer {
   display: flex;
   gap: 10px;
 }
-.playerControlPanel h1 {
-  font-size: 20px;
-}
-.playerControlPanel {
-  display: flex;
-  gap: 10px;
-}
+
 .buttonPlayer {
   display: flex;
   align-items: center;
@@ -28,112 +29,147 @@
   background-color: #ff9800;
   border-radius: 10px;
   font-size: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.buttonPlayer:hover {
+  transform: scale(1.1);
+  background-color: #ffa733;
 }
 
 .movie-details-container {
-  display: flex; /* Используем flexbox для размещения элементов в строку */
-  gap: 20px; /* Добавляем отступ между изображением и текстом */
-  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
 .movie-poster {
-  width: 300px; /* Фиксированная ширина изображения */
-  height: auto; /* Сохраняем пропорции изображения */
-  border-radius: 8px; /* Скруглённые углы */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .movie-info {
-  flex: 1; /* Текст занимает оставшееся пространство */
-  color: #f4f4f4; /* Цвет текста */
-  font-size: 16px; /* Размер шрифта */
-  line-height: 1.6; /* Межстрочный интервал */
+  flex: 1;
+  color: #f4f4f4;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .movie-info h1 {
-  font-size: 24px; /* Увеличенный размер заголовка */
-  margin-bottom: 16px; /* Отступ снизу */
-  color: #ff9800; /* Цвет заголовка */
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #ff9800;
 }
 
 .movie-info p {
-  margin: 8px 0; /* Отступы между абзацами */
+  margin: 8px 0;
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-component {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-component button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.rating-component button:hover,
+.rating-component button.active {
+  color: gold;
+}
+
+.similar-movies-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.similar-movies-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+
+.similar-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.similar-movie-card {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.similar-movie-card:hover {
+  transform: scale(1.05);
+}
+
+.similar-movie-poster {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.similar-movie-title {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 @media (max-width: 768px) {
   .movie-details-container {
-    flex-direction: column; /* Элементы располагаются вертикально */
-    align-items: center; /* Выравнивание по центру */
+    flex-direction: column;
+    align-items: center;
   }
 
   .movie-poster {
-    width: 100%; /* Изображение занимает всю ширину */
-    max-width: 300px; /* Максимальная ширина */
+    width: 100%;
+    max-width: 300px;
   }
 
   .movie-info {
-    text-align: center; /* Текст выравнивается по центру */
+    text-align: center;
   }
 }
-.user-rating {
-    display: flex; /* Выравниваем элементы по горизонтали */
-    align-items: center; /* Выравниваем текст и звёзды по вертикали */
-    gap: 10px; /* Расстояние между текстом и звёздами */
+
+@media (max-width: 480px) {
+  .playerButtonContainer {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  .rating-component {
-    display: flex; /* Для звёзд остаётся горизонтальное расположение */
-    gap: 5px; /* Расстояние между звёздами */
+
+  .buttonPlayer {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
-  
 
-.rating-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Расстояние между звёздами и текстом */
-}
-
-.rating-component button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: gray;
-    transition: color 0.3s ease;
-}
-
-.rating-component button:hover,
-.rating-component button.active {
-    color: gold;
-}
-.user-rating {
-    display: flex; /* Выравниваем элементы по горизонтали */
-    align-items: center; /* Выравниваем текст и звёзды по вертикали */
-    gap: 10px; /* Расстояние между текстом и звёздами */
+  .similar-movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-  
-  .rating-component {
-    display: flex; /* Для звёзд остаётся горизонтальное расположение */
-    gap: 5px; /* Расстояние между звёздами */
-  }
-  
-
-.rating-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Расстояние между звёздами и текстом */
-}
-
-.rating-component button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: gray;
-    transition: color 0.3s ease;
-}
-
-.rating-component button:hover,
-.rating-component button.active {
-    color: gold;
 }

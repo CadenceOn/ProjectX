@@ -11,33 +11,30 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const [playerUrls, setPlayerUrls] = useState<string[]>([]);
   const [playerNumber, setPlayerNumber] = useState(0);
+  const [similarMovies, setSimilarMovies] = useState([]); // State для похожих фильмов
   const { store } = useContext(Context);
 
   const fetchMovieDetails = async () => {
     try {
-      store.movie
-        .getMovie({ id: Number(id) })
-        .then((response) => {
-          setMovie(response.data);
-          setError(null);
-        })
-        .catch(() => {
-          setError('Error');
-        });
-      store.watchMovie.getPlayerInfo({ id: Number(id) }).then((response) => {
-        console.log('response', response);
-        if (response.data.data && Array.isArray(response.data.data)) {
-          setPlayerUrls(
-            response.data.data
-              .map((item) => {
-                if (item.iframeUrl) {
-                  return item.iframeUrl;
-                }
-              })
-              .filter((element) => element !== undefined),
-          );
-        }
-      });
+      // Получение деталей фильма
+      const movieResponse = await store.movie.getMovie({ id: Number(id) });
+      setMovie(movieResponse.data);
+
+      // Получение списка похожих фильмов
+      const similarResponse = await store.movie.getSimilars({ id: Number(id) });
+      setSimilarMovies(similarResponse.data.items || []); // Сохраняем список похожих фильмов
+
+      // Получение плееров
+      const playerResponse = await store.watchMovie.getPlayerInfo({ id: Number(id) });
+      if (playerResponse.data.data && Array.isArray(playerResponse.data.data)) {
+        setPlayerUrls(
+          playerResponse.data.data
+            .map((item) => item.iframeUrl)
+            .filter((url) => url !== undefined),
+        );
+      }
+
+      setError(null);
     } catch (err) {
       setError('Failed to fetch movie details');
     } finally {
@@ -108,14 +105,38 @@ const MovieDetails = () => {
                 onClick={() => {
                   setPlayerNumber(i);
                 }}>
-                {i}
+                Плеер {i + 1}
               </div>
             );
           })}
         </div>
       </div>
-      <iframe className="moviePlayer" src={playerUrls[playerNumber]} allowFullScreen>
+      <iframe
+        className="moviePlayer"
+        src={playerUrls[playerNumber]}
+        allowFullScreen>
       </iframe>
+
+      {/* Секция для похожих фильмов */}
+      <div className="similar-movies-section">
+        <h2>Похожие фильмы</h2>
+        {similarMovies.length > 0 ? (
+          <div className="similar-movies-grid">
+            {similarMovies.map((movie) => (
+              <div key={movie.id} className="similar-movie-card">
+                <img
+                  src={movie.posterUrl}
+                  alt={movie.name}
+                  className="similar-movie-poster"
+                />
+                <p className="similar-movie-title">{movie.name}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>Похожие фильмы не найдены.</p>
+        )}
+      </div>
     </div>
   );
 };
