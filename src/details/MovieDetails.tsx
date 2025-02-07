@@ -107,7 +107,7 @@ const MovieDetails = () => {
     <div>
       <div className="movie-details-container">
         <img
-          src={movie.posterUrl || "https://via.placeholder.com/300x450"}
+          src={movie.posterUrl}
           alt={movie.nameRu || "Постер"}
           className="movie-poster"
         />
