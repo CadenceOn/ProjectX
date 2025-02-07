@@ -3,19 +3,34 @@
   gap: 10px; /* Расстояние между звёздами */
 }
 
-.star-button {
-  font-size: 30px;
-  color: gray;
+
+
+
+
+.rating-component button:hover,
+.rating-component button.active {
+  color: #ff9800;
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-component button {
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.star-button.active {
-  color: gold; /* Закрашенная звезда */
-}
-
-.star-button:hover ~ .star-button {
-  color: gray; /* Убираем закрашивание следующих звёзд */
+  font-size: 20px;
+  color: gray;
+  transition: color 0.3s ease;
 }

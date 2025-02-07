@@ -94,42 +94,15 @@
   margin: 8px 0;
 }
 
-.user-rating {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.rating-component {
-  display: flex;
-  gap: 5px;
-}
 
-.rating-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.rating-component button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: gray;
-  transition: color 0.3s ease;
-}
-
-.rating-component button:hover,
-.rating-component button.active {
-  color: gold;
-}
 
 .similar-movies-section {
   margin-top: 30px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #181818;
   border-radius: 8px;
+  border: 1px solid #333;
 }
 
 .similar-movies-section h2 {
@@ -146,7 +119,7 @@
 
 .similar-movie-card {
   text-align: center;
-  background-color: #fff;
+  background-color: #181818;
   padding: 10px;
   border-radius: 8px;
   transition: transform 0.3s ease;
