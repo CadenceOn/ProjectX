@@ -1,0 +1,22 @@
+
+
+.slick-list {
+  margin: 0 -2.5px; 
+}
+.slick-slide {
+  padding: 0 5px; 
+}
+/* или margin: 0 5px; - главное, чтобы компенсировать поля внутри .slick-list */
+
+/* Неактивная точка (точки-кружки) */
+.slick-dots li button::before {
+  font-size: 10px;              /* размер точки */
+  color: #ffffff !important;    /* цвет (оранжевый) */
+}
+
+/* Активная точка */
+.slick-dots li.slick-active button::before {
+  color: #ff9800 !important;    
+}
+
+
