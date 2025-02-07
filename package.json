@@ -15,7 +15,7 @@
     "type": "commonjs",
     "main": "./src/index.tsx",
     "scripts": {
-        "eslint": "npm run eslintv src",
+        "eslint": "npm run eslint src",
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "brojs server --port=8099 --with-open-browser",
         "build": "npm run clean && brojs build --dev",
