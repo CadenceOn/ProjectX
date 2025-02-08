@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import FacebookIcon from "../assets/facebook-svgrepo-com.svg";
-import TwitterIcon from "../assets/twitter-round-svgrepo-com.svg";
-import InstagramIcon from "../assets/instagram-round-svgrepo-com.svg";
+// import FacebookIcon from "../assets/facebook-svgrepo-com.svg";
+// import TwitterIcon from "../assets/twitter-round-svgrepo-com.svg";
+// import InstagramIcon from "../assets/instagram-round-svgrepo-com.svg";
 
 const Footer = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -173,7 +173,7 @@ const Footer = () => {
                             rel="noreferrer"
                         >
                             <img
-                                src={FacebookIcon}
+                                src={null}
                                 alt="Facebook"
                                 className="social-icon"
                             />
@@ -184,7 +184,7 @@ const Footer = () => {
                             rel="noreferrer"
                         >
                             <img
-                                src={TwitterIcon}
+                                src={null}
                                 alt="Twitter"
                                 className="social-icon"
                             />
@@ -195,7 +195,7 @@ const Footer = () => {
                             rel="noreferrer"
                         >
                             <img
-                                src={InstagramIcon}
+                                src={null}
                                 alt="Instagram"
                                 className="social-icon"
                             />
