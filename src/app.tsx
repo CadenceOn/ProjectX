@@ -31,6 +31,7 @@ const App = () => (
       </Router>
     </RatingsProvider>
   </Context.Provider>
+  
 );
 
 export default App;
