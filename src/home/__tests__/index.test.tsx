@@ -1,8 +1,8 @@
 import { describe, test } from "@jest/globals"
-import { findAllByText, findByText, render, screen } from "@testing-library/react"
+import {render, screen } from "@testing-library/react"
 import HomePage from "../HomePage"
 import React from "react"
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import { ListMovie } from "../../api/services";
 
 const Wrapper = ({children}) => <BrowserRouter>{children}</BrowserRouter>

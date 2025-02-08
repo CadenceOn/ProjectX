@@ -12,6 +12,7 @@ export default [
     },
     rules: {
      "@typescript-eslint/no-explicit-any": "off",
+     'react/prop-types' : 'off'
     },
     ignores: [
       'src/api/services.ts',
@@ -34,4 +35,8 @@ export default [
     files: ["**/*.{ts,tsx}"],
   })),
   pluginReact.configs.flat.recommended,
+
+  {
+    rules:{'react/prop-types' : 'off'} 
+  }
 ];
