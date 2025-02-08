@@ -7,12 +7,13 @@ import { Context } from '../store/context';
 import { GridPoster } from '../components/GridPoster/components/GridPoster';
 import FilterModal from '../components/FilterModal/FilterModal';
 import filter from '../assets/filter.png'
+import { Movie } from 'api/types';
 
 const HomePage = () => {
-  const [movies, setMovies] = useState([]); // Полный список фильмов
-  const [filteredMovies, setFilteredMovies] = useState([]); // Фильтрованные фильмы
-  const [genres, setGenres] = useState([]); // Список жанров из API
-  const [countries, setCountries] = useState([]); // Список стран из API
+  const [filteredMovies, setFilteredMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]); // Фильтрованные фильмы
+  const [genres, setGenres] = useState<string[]>([]); // Список жанров из API
+  const [countries, setCountries] = useState<string[]>([]); // Список стран из API
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false); // Состояние для открытия модального окна
@@ -21,11 +22,11 @@ const HomePage = () => {
   const { store } = useContext(Context);
 
   // Фильтрация нежелательных фильмов
-  const filterSafeMovies = (movies) => {
+  const filterSafeMovies = (movies: Array<Movie>) => {
     const bannedGenres = ['Erotic', 'Порнопародия', 'Эротика', 'для взрослых']; // Запрещенные жанры
     const bannedKeywords = ['для взрослых', 'эротика', 'порнопародия', '18+']; // Запрещенные слова
 
-    return movies.filter((movie) => {
+    return movies.filter((movie: Movie) => {
       const hasBannedGenre = movie.genres?.some((genre) =>
         bannedGenres.includes(genre.genre)
       );
@@ -47,7 +48,7 @@ const HomePage = () => {
         keyword: searchQuery,
         page: currentPage, // Указываем текущую страницу
       });
-      const moviesData = filterSafeMovies(response.data.items || []);
+      const moviesData = filterSafeMovies((response.data.items as Movie[]) || []);
 
       // Если больше фильмов нет
       if (moviesData.length === 0) {
@@ -59,8 +60,8 @@ const HomePage = () => {
       setFilteredMovies((prev) => [...prev, ...moviesData]);
 
       // Извлекаем жанры и страны из фильмов
-      const allGenres = new Set(genres);
-      const allCountries = new Set(countries);
+      const allGenres = new Set<string>(genres);
+      const allCountries = new Set<string>(countries);
       moviesData.forEach((movie) => {
         if (movie.genres) {
           movie.genres.forEach((genre) => allGenres.add(genre.genre));
