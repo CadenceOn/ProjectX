@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/246</span>
+                <span class='fraction'>0/254</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/246</span>
+                <span class='fraction'>0/254</span>
             </div>
         
             
@@ -308,7 +308,23 @@
 <a name='L243'></a><a href='#L243'>243</a>
 <a name='L244'></a><a href='#L244'>244</a>
 <a name='L245'></a><a href='#L245'>245</a>
-<a name='L246'></a><a href='#L246'>246</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -668,36 +684,44 @@
 <span class="cstat-no" title="statement not covered" >        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className="movie-info"&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;h1&gt;{movie.nameRu || "Без названия"}&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Описание:&lt;/strong&gt; {movie.description || "Описание недоступно"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Жанр:&lt;/strong&gt;{" "}</span>
+<span class="cstat-no" title="statement not covered" >          </span>
+<span class="cstat-no" title="statement not covered" >          &lt;div className="movie-details-info"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="movie-detail-item"&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;strong&gt;Год:&lt;/strong&gt; {movie.year || "Неизвестно"}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="movie-detail-item"&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;strong&gt;Kinopoisk:&lt;/strong&gt; {movie.ratingKinopoisk || "N/A"}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="movie-detail-item"&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;strong&gt;IMDb:&lt;/strong&gt; {movie.ratingImdb || "N/A"}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          </span>
+<span class="cstat-no" title="statement not covered" >          &lt;div className="movie-description"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;h3&gt;Описание&lt;/h3&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;p&gt;{movie.description || "Описание недоступно"}&lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          </span>
+<span class="cstat-no" title="statement not covered" >          &lt;div className="movie-genres"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Жанры:&lt;/strong&gt;{" "}</span>
 <span class="cstat-no" title="statement not covered" >            {movie.genres?.map((genre, index: number) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >              &lt;span key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;span key={index} className="genre-tag"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {genre.genre}</span>
 <span class="cstat-no" title="statement not covered" >                {index &lt; movie.genres.length - 1 &amp;&amp; ", "}</span>
 <span class="cstat-no" title="statement not covered" >              &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )) || "Неизвестно"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          </span>
+<span class="cstat-no" title="statement not covered" >          &lt;div className="movie-countries"&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Страна:&lt;/strong&gt;{" "}</span>
 <span class="cstat-no" title="statement not covered" >            {movie.countries?.map((country, index: number) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >              &lt;span key={index}&gt;</span>
+<span class="cstat-no" title="statement not covered" >              &lt;span key={index} className="country-tag"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {country.country}</span>
 <span class="cstat-no" title="statement not covered" >                {index &lt; movie.countries.length - 1 &amp;&amp; ", "}</span>
 <span class="cstat-no" title="statement not covered" >              &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )) || "Неизвестно"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Год:&lt;/strong&gt; {movie.year || "Неизвестно"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Рейтинг Kinopoisk:&lt;/strong&gt; {movie.ratingKinopoisk || "N/A"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;strong&gt;Рейтинг IMDb:&lt;/strong&gt; {movie.ratingImdb || "N/A"}</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >          </span>
 <span class="cstat-no" title="statement not covered" >          &lt;div className="user-rating"&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;h4&gt;Ваш рейтинг:&lt;/h4&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;RatingComponent movieId={id} /&gt;</span>
@@ -742,7 +766,7 @@
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >      {movieImages.length &gt; 0 &amp;&amp; &lt;ScreenshotCarousel images={movieImages} /&gt;}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      &lt;a href={`https://flicksbar.mom/film/${id}`}&gt;Смотреть на Flicksbar&lt;/a&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;a href={`https://flicksbar.mom/film/${id}`} className="flicksbar-link"&gt;Смотреть на Flicksbar&lt;/a&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >      &lt;div className="playerControlPanel"&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;h1&gt;Выберите плеер&lt;/h1&gt;</span>
@@ -805,7 +829,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-08T11:28:47.181Z
+                at 2025-03-10T22:55:18.954Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1739014127300" clover="3.2.0">
-  <project timestamp="1739014127300" name="All files">
-    <metrics statements="2932" coveredstatements="730" conditionals="148" coveredconditionals="96" methods="114" coveredmethods="30" elements="3194" coveredelements="856" complexity="0" loc="2932" ncloc="2932" packages="11" files="34" classes="34"/>
+<coverage generated="1741647319036" clover="3.2.0">
+  <project timestamp="1741647319036" name="All files">
+    <metrics statements="2940" coveredstatements="730" conditionals="148" coveredconditionals="96" methods="114" coveredmethods="30" elements="3202" coveredelements="856" complexity="0" loc="2940" ncloc="2940" packages="11" files="34" classes="34"/>
     <package name="src">
       <metrics statements="89" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="app.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\app.tsx">
+      <file name="app.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\app.tsx">
         <metrics statements="37" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -44,7 +44,7 @@
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
       </file>
-      <file name="global.d.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\global.d.ts">
+      <file name="global.d.ts" path="C:\Users\R2R\projecccc\ProjectX\src\global.d.ts">
         <metrics statements="24" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -71,7 +71,7 @@
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
       </file>
-      <file name="index.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\index.tsx">
+      <file name="index.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\index.tsx">
         <metrics statements="28" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -105,7 +105,7 @@
     </package>
     <package name="src.about">
       <metrics statements="86" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="AboutPage.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\about\AboutPage.tsx">
+      <file name="AboutPage.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\about\AboutPage.tsx">
         <metrics statements="86" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -197,11 +197,11 @@
     </package>
     <package name="src.api">
       <metrics statements="767" coveredstatements="276" conditionals="50" coveredconditionals="41" methods="53" coveredmethods="10"/>
-      <file name="const.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\api\const.ts">
+      <file name="const.ts" path="C:\Users\R2R\projecccc\ProjectX\src\api\const.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
-      <file name="instances.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\api\instances.ts">
+      <file name="instances.ts" path="C:\Users\R2R\projecccc\ProjectX\src\api\instances.ts">
         <metrics statements="34" coveredstatements="23" conditionals="3" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -238,7 +238,7 @@
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="1" type="stmt"/>
       </file>
-      <file name="services.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\api\services.ts">
+      <file name="services.ts" path="C:\Users\R2R\projecccc\ProjectX\src\api\services.ts">
         <metrics statements="231" coveredstatements="204" conditionals="45" coveredconditionals="38" methods="31" coveredmethods="9"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="0" type="cond" truecount="12" falsecount="6"/>
@@ -472,7 +472,7 @@
         <line num="230" count="1" type="stmt"/>
         <line num="231" count="1" type="stmt"/>
       </file>
-      <file name="types.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\api\types.ts">
+      <file name="types.ts" path="C:\Users\R2R\projecccc\ProjectX\src\api\types.ts">
         <metrics statements="430" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -905,7 +905,7 @@
         <line num="429" count="0" type="stmt"/>
         <line num="430" count="0" type="stmt"/>
       </file>
-      <file name="urls.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\api\urls.ts">
+      <file name="urls.ts" path="C:\Users\R2R\projecccc\ProjectX\src\api\urls.ts">
         <metrics statements="71" coveredstatements="48" conditionals="1" coveredconditionals="1" methods="21" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -982,7 +982,7 @@
     </package>
     <package name="src.components">
       <metrics statements="756" coveredstatements="54" conditionals="11" coveredconditionals="2" methods="13" coveredmethods="2"/>
-      <file name="ContainerGrid.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\ContainerGrid.tsx">
+      <file name="ContainerGrid.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\ContainerGrid.tsx">
         <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1003,7 +1003,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="Footer.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\Footer.tsx">
+      <file name="Footer.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\Footer.tsx">
         <metrics statements="234" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1240,7 +1240,7 @@
         <line num="233" count="0" type="stmt"/>
         <line num="234" count="0" type="stmt"/>
       </file>
-      <file name="Header.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\Header.tsx">
+      <file name="Header.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\Header.tsx">
         <metrics statements="56" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1299,7 +1299,7 @@
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
       </file>
-      <file name="Loader.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\Loader.tsx">
+      <file name="Loader.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\Loader.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1312,7 +1312,7 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="MovieCard.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\MovieCard.tsx">
+      <file name="MovieCard.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\MovieCard.tsx">
         <metrics statements="54" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1369,7 +1369,7 @@
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
       </file>
-      <file name="RatingComponent.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\RatingComponent.tsx">
+      <file name="RatingComponent.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\RatingComponent.tsx">
         <metrics statements="54" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1426,7 +1426,7 @@
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
       </file>
-      <file name="RatingContext.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\RatingContext.tsx">
+      <file name="RatingContext.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\RatingContext.tsx">
         <metrics statements="33" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1462,7 +1462,7 @@
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
       </file>
-      <file name="ScreenshotCarousel.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\ScreenshotCarousel.tsx">
+      <file name="ScreenshotCarousel.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\ScreenshotCarousel.tsx">
         <metrics statements="84" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1549,7 +1549,7 @@
         <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
       </file>
-      <file name="SearchBar.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\SearchBar.tsx">
+      <file name="SearchBar.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\SearchBar.tsx">
         <metrics statements="28" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1580,7 +1580,7 @@
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
       </file>
-      <file name="SimilarMovies.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\SimilarMovies.tsx">
+      <file name="SimilarMovies.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\SimilarMovies.tsx">
         <metrics statements="125" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1708,7 +1708,7 @@
         <line num="124" count="0" type="stmt"/>
         <line num="125" count="0" type="stmt"/>
       </file>
-      <file name="head-test-f.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\head-test-f.tsx">
+      <file name="head-test-f.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\head-test-f.tsx">
         <metrics statements="29" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1740,7 +1740,7 @@
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
       </file>
-      <file name="test-f.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\test-f.tsx">
+      <file name="test-f.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\test-f.tsx">
         <metrics statements="31" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1777,7 +1777,7 @@
     </package>
     <package name="src.components.FilterModal">
       <metrics statements="86" coveredstatements="31" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
-      <file name="FilterModal.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\FilterModal\FilterModal.tsx">
+      <file name="FilterModal.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\FilterModal\FilterModal.tsx">
         <metrics statements="86" coveredstatements="31" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1869,14 +1869,14 @@
     </package>
     <package name="src.components.GridPoster">
       <metrics statements="1" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\GridPoster\index.ts">
+      <file name="index.ts" path="C:\Users\R2R\projecccc\ProjectX\src\components\GridPoster\index.ts">
         <metrics statements="1" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
       </file>
     </package>
     <package name="src.components.GridPoster.components">
       <metrics statements="155" coveredstatements="150" conditionals="10" coveredconditionals="5" methods="2" coveredmethods="0"/>
-      <file name="GridPoster.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\components\GridPoster\components\GridPoster.tsx">
+      <file name="GridPoster.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\components\GridPoster\components\GridPoster.tsx">
         <metrics statements="155" coveredstatements="150" conditionals="10" coveredconditionals="5" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2036,8 +2036,8 @@
       </file>
     </package>
     <package name="src.details">
-      <metrics statements="417" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="MovieDetails copy.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\details\MovieDetails copy.tsx">
+      <metrics statements="425" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="MovieDetails copy.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\details\MovieDetails copy.tsx">
         <metrics statements="160" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2200,8 +2200,8 @@
         <line num="159" count="0" type="stmt"/>
         <line num="160" count="0" type="stmt"/>
       </file>
-      <file name="MovieDetails.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\details\MovieDetails.tsx">
-        <metrics statements="246" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="MovieDetails.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\details\MovieDetails.tsx">
+        <metrics statements="254" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -2448,8 +2448,16 @@
         <line num="244" count="0" type="stmt"/>
         <line num="245" count="0" type="stmt"/>
         <line num="246" count="0" type="stmt"/>
+        <line num="247" count="0" type="stmt"/>
+        <line num="248" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="250" count="0" type="stmt"/>
+        <line num="251" count="0" type="stmt"/>
+        <line num="252" count="0" type="stmt"/>
+        <line num="253" count="0" type="stmt"/>
+        <line num="254" count="0" type="stmt"/>
       </file>
-      <file name="index.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\details\index.tsx">
+      <file name="index.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\details\index.tsx">
         <metrics statements="11" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2466,7 +2474,7 @@
     </package>
     <package name="src.favorites">
       <metrics statements="127" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="FavoritesPage.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\favorites\FavoritesPage.tsx">
+      <file name="FavoritesPage.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\favorites\FavoritesPage.tsx">
         <metrics statements="114" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2583,7 +2591,7 @@
         <line num="113" count="0" type="stmt"/>
         <line num="114" count="0" type="stmt"/>
       </file>
-      <file name="index.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\favorites\index.tsx">
+      <file name="index.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\favorites\index.tsx">
         <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2602,7 +2610,7 @@
     </package>
     <package name="src.home">
       <metrics statements="310" coveredstatements="138" conditionals="57" coveredconditionals="41" methods="24" coveredmethods="12"/>
-      <file name="HomePage.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\home\HomePage.tsx">
+      <file name="HomePage.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\home\HomePage.tsx">
         <metrics statements="172" coveredstatements="138" conditionals="56" coveredconditionals="41" methods="23" coveredmethods="12"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="27" type="cond" truecount="13" falsecount="8"/>
@@ -2634,7 +2642,7 @@
         <line num="28" count="2" type="stmt"/>
         <line num="29" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="30" count="40" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="84" type="stmt"/>
+        <line num="31" count="88" type="stmt"/>
         <line num="32" count="40" type="stmt"/>
         <line num="33" count="40" type="stmt"/>
         <line num="34" count="40" type="cond" truecount="1" falsecount="0"/>
@@ -2674,7 +2682,7 @@
         <line num="68" count="38" type="stmt"/>
         <line num="69" count="38" type="stmt"/>
         <line num="70" count="38" type="cond" truecount="1" falsecount="0"/>
-        <line num="71" count="66" type="stmt"/>
+        <line num="71" count="56" type="stmt"/>
         <line num="72" count="38" type="stmt"/>
         <line num="73" count="38" type="stmt"/>
         <line num="74" count="2" type="stmt"/>
@@ -2777,7 +2785,7 @@
         <line num="171" count="1" type="stmt"/>
         <line num="172" count="1" type="stmt"/>
       </file>
-      <file name="hpt.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\home\hpt.tsx">
+      <file name="hpt.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\home\hpt.tsx">
         <metrics statements="138" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2921,7 +2929,7 @@
     </package>
     <package name="src.store">
       <metrics statements="138" coveredstatements="81" conditionals="8" coveredconditionals="6" methods="8" coveredmethods="5"/>
-      <file name="context.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\store\context.ts">
+      <file name="context.ts" path="C:\Users\R2R\projecccc\ProjectX\src\store\context.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -2938,7 +2946,7 @@
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="rating.tsx" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\store\rating.tsx">
+      <file name="rating.tsx" path="C:\Users\R2R\projecccc\ProjectX\src\store\rating.tsx">
         <metrics statements="41" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2982,7 +2990,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
       </file>
-      <file name="store.ts" path="C:\Users\R2R\Desktop\privet_mir\ProjectX\src\store\store.ts">
+      <file name="store.ts" path="C:\Users\R2R\projecccc\ProjectX\src\store\store.ts">
         <metrics statements="83" coveredstatements="67" conditionals="7" coveredconditionals="6" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
