@@ -7,9 +7,7 @@
 // import "@testing-library/jest-dom";
 
 
-// // Mock store with necessary methods
-// const mockStore = {
-//   list: {
+
 //     getFilmsFilter: jest.fn(),
 //   },
 // };
