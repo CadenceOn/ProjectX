@@ -99,18 +99,29 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
-  if (loading) return <p>Загрузка...</p>;
+  if (loading) return <div className="anime-loading">Загрузка<span>.</span><span>.</span><span>.</span></div>;
   if (error) return <p className="error-message">{error}</p>;
   if (!movie) return <p>Фильм не найден.</p>;
 
   return (
-    <div>
+    <div className="anime-container">
+      <div className="anime-decoration top-left"></div>
+      <div className="anime-decoration top-right"></div>
+      <div className="anime-decoration bottom-left"></div>
+      <div className="anime-decoration bottom-right"></div>
+      
       <div className="movie-details-container">
-        <img
-          src={movie.posterUrl}
-          alt={movie.nameRu || "Постер"}
-          className="movie-poster"
-        />
+        <div className="movie-poster-container">
+          <div className="movie-poster-frame">
+            <img
+              src={movie.posterUrl}
+              alt={movie.nameRu || "Постер"}
+              className="movie-poster"
+            />
+            <div className="poster-shine"></div>
+          </div>
+          <div className="poster-badge">{movie.ratingKinopoisk || "?"}</div>
+        </div>
         <div className="movie-info">
           <h1>{movie.nameRu || "Без названия"}</h1>
           <p>
@@ -119,7 +130,7 @@ const MovieDetails = () => {
           <p>
             <strong>Жанр:</strong>{" "}
             {movie.genres?.map((genre, index: number) => (
-              <span key={index}>
+              <span key={index} className="genre-tag">
                 {genre.genre}
                 {index < movie.genres.length - 1 && ", "}
               </span>
@@ -138,10 +149,10 @@ const MovieDetails = () => {
             <strong>Год:</strong> {movie.year || "Неизвестно"}
           </p>
           <p>
-            <strong>Рейтинг Kinopoisk:</strong> {movie.ratingKinopoisk || "N/A"}
+            <strong>Рейтинг Kinopoisk:</strong> <span className="rating-highlight">{movie.ratingKinopoisk || "N/A"}</span>
           </p>
           <p>
-            <strong>Рейтинг IMDb:</strong> {movie.ratingImdb || "N/A"}
+            <strong>Рейтинг IMDb:</strong> <span className="rating-highlight">{movie.ratingImdb || "N/A"}</span>
           </p>
           <div className="user-rating">
             <h4>Ваш рейтинг:</h4>
@@ -187,10 +198,8 @@ const MovieDetails = () => {
 
       {movieImages.length > 0 && <ScreenshotCarousel images={movieImages} />}
 
-      <a href={`https://flicksbar.mom/film/${id}`}>Смотреть на Flicksbar</a>
-
       <div className="playerControlPanel">
-        <h1>Выберите плеер</h1>
+        <h1>Выберите плеер <span className="anime-accent">ᓚᘏᗢ</span></h1>
         <div className="playerButtonContainer">
           {playerUrls.map((url, i) => (
             <div key={`player-${i}`} className="buttonPlayer" onClick={() => setPlayerNumber(i)}>
@@ -204,12 +213,12 @@ const MovieDetails = () => {
       <iframe className="moviePlayer" src={playerUrls[playerNumber]} allowFullScreen />
 
       <div className="similar-movies-section">
-        <h2>Похожие фильмы</h2>
+        <h2>Похожие фильмы <span className="anime-accent">ʕ•ᴥ•ʔ</span></h2>
         {similarMovies.length > 0 ? (
           <div className="similar-movies-grid">
             {similarMovies.map((similarMovie) => (
               <div
-                key={similarMovie.filmId} // Исправлено на корректный ключ
+                key={similarMovie.filmId}
                 className="similar-movie-card"
                 onClick={() => {
                   if (similarMovie.filmId) {
@@ -226,18 +235,27 @@ const MovieDetails = () => {
                   }
                 }}
               >
-                <img
-                  src={similarMovie.posterUrl || "https://via.placeholder.com/200x300"}
-                  alt={similarMovie.nameRu || "Постер"}
-                  className="similar-movie-poster"
-                />
-                <p className="similar-movie-title">{similarMovie.nameRu || "Без названия"}</p>
+                <div className="similar-movie-inner">
+                  <img
+                    src={similarMovie.posterUrl || "https://via.placeholder.com/200x300"}
+                    alt={similarMovie.nameRu || "Постер"}
+                    className="similar-movie-poster"
+                  />
+                  <p className="similar-movie-title">{similarMovie.nameRu || "Без названия"}</p>
+                </div>
               </div>
             ))}
           </div>
         ) : (
           <p>Похожие фильмы не найдены.</p>
         )}
+      </div>
+      
+      <div className="anime-watch-btn">
+        <a href={`https://flicksbar.mom/film/${id}`}>
+          <span className="btn-effect"></span>
+          <span className="btn-text">Смотреть на Flicksbar</span>
+        </a>
       </div>
     </div>
   );

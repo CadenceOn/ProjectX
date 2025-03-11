@@ -1,195 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&family=Bangers&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #ff4d6d;
+  --secondary-color: #7b2cbf;
+  --accent-color: #ffbd00;
+  --dark-bg: #1a1a2e;
+  --darker-bg: #16213e;
+  --lighter-bg: #0f3460;
+  --text-light: #f5f5f5;
+  --text-grey: #b3b3b3;
+  --shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --glow: 0 0 15px rgba(255, 77, 109, 0.6);
+  --transition: all 0.3s ease-in-out;
+  --border-radius: 12px;
+  --gradient-1: linear-gradient(135deg, #ff4d6d, #c32f5b);
+  --gradient-2: linear-gradient(135deg, #7b2cbf, #5a189a);
+  --gradient-3: linear-gradient(135deg, #ffbd00, #ff9e00);
+}
+
+body {
+  background-color: var(--dark-bg);
+  background-image: linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0 50px 0;
+}
+
+/* Movie player styling */
 .moviePlayer {
-    width: 100%;
-    height: 50vw;
+  width: 100%;
+  height: 56.25vw;
+  max-height: 700px;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin: 30px 0;
+  background-color: #000;
+  animation: pulseBorder 3s infinite alternate;
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 77, 109, 0.8);
+  }
 }
 
 .playerControlPanel {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 52, 96, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin: 40px 0 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
-.playerButtonContainer {
-    display: flex;
 
-    gap: 10px; /* Расстояние между кнопками */
-    margin: 16px 0;
+.playerControlPanel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-1);
 }
 
 .playerControlPanel h1 {
-    font-size: 20px;
+  font-family: 'Bangers', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.playerControlPanel h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-1);
+  border-radius: 5px;
 }
 
 .playerButtonContainer {
-    display: flex;
-    gap: 10px;
-}
-
-@font-face {
-    font-family: "MyCustomFont";
-    src: url("../../src/assets/fonts/fa-brands-400.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .buttonPlayer {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    user-select: none;
-    cursor: pointer;
-    background-color: #ff9800;
-    border-radius: 10px;
-    font-size: 20px;
-    font-family: "MyCustomFont";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  user-select: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-family: 'Quicksand', sans-serif;
+  transition: var(--transition);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.player-label {
-    font-size: 15px;
-    line-height: 1.2;
-    margin-bottom: 2px;
-    font-family: "MyCustomFont";
-}
-
-.player-number {
-    font-size: 12px;
-    line-height: 1.2;
-    margin-bottom: 2px;
-    font-family: "MyCustomFont";
+.buttonPlayer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
 }
 
 .buttonPlayer:hover {
-    background-color: #cc7a00; /* Изменение цвета при наведении */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--glow);
+  border-color: var(--primary-color);
 }
 
-.movie-info .awards-section button {
-    padding: 8px 12px; /* Уменьшаем внутренние отступы */
-    font-size: 14px; /* Уменьшаем размер текста */
-    margin-top: 10px; /* Увеличьте значение для большего отступа */
-    margin-bottom: 16px; /* Отступ снизу */
-    background-color: #ff9800; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Скругляем углы */
-    cursor: pointer; /* Указываем, что это кнопка */
-    transition: background-color 0.3s ease; /* Добавляем плавный переход для фона */
+.buttonPlayer:hover::before {
+  opacity: 0.2;
 }
 
-.movie-info .awards-section button:hover {
-    background-color: #cc7a00; /* Изменение цвета при наведении */
+.player-label {
+  font-size: 10px;
+  color: var(--text-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
 }
 
+.player-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Movie details container */
 .movie-details-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 40px 0;
+  background: rgba(15, 52, 96, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-details-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: var(--gradient-2);
+  opacity: 0.2;
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.movie-details-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-1);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.movie-poster-container {
+  position: relative;
+  margin-bottom: 20px;
+  perspective: 1000px;
+}
+
+.movie-poster-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  transform-style: preserve-3d;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .movie-poster {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  border-radius: var(--border-radius);
+  display: block;
+  transform: translateZ(0);
+  transition: var(--transition);
+  border: none;
+}
+
+.poster-shine {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 1.5s;
+}
+
+.movie-poster-frame:hover .poster-shine {
+  top: -30%;
+  left: -30%;
+}
+
+.movie-poster-frame:hover {
+  transform: rotateY(10deg);
+  box-shadow: -20px 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+.poster-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-1);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 2;
+  animation: pulseBadge 2s infinite alternate;
+}
+
+@keyframes pulseBadge {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.5);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.7);
+  }
+}
+
+.anime-accent {
+  color: var(--accent-color);
+  font-size: 0.8em;
+  margin-left: 10px;
+  display: inline-block;
+  transform: translateY(-2px);
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.similar-movie-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.similar-movie-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 77, 109, 0.3), rgba(123, 44, 191, 0.3));
+  opacity: 0;
+  transition: var(--transition);
+  border-radius: calc(var(--border-radius) - 4px);
+  z-index: 1;
+}
+
+.similar-movie-card:hover .similar-movie-inner::before {
+  opacity: 1;
+}
+
+.anime-watch-btn {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.anime-watch-btn a {
+  position: relative;
+  padding: 15px 40px;
+  background: var(--gradient-2);
+  color: white;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: 'Bangers', cursive;
+  box-shadow: 0 10px 30px rgba(123, 44, 191, 0.4);
+  transition: all 0.5s;
+}
+
+.btn-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-25deg);
+  }
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.anime-watch-btn a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(123, 44, 191, 0.6);
+  background: var(--gradient-1);
 }
 
 .movie-info {
-    flex: 1;
-    color: #f4f4f4;
-    font-size: 16px;
-    line-height: 1.6;
+  flex: 1;
+  min-width: 300px;
 }
 
 .movie-info h1 {
-    font-size: 24px;
-    margin-bottom: 16px;
-    color: #ff9800;
+  font-family: 'Bangers', cursive;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-1);
+  border-radius: 5px;
 }
 
 .movie-info p {
-    margin: 8px 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
+.movie-info p strong {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+/* Awards and Box Office sections */
+.movie-extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.awards-section, .box-office-section {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(26, 26, 46, 0.7);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.movie-info .awards-section h2,
+.movie-info .box-office-section h2 {
+  font-family: 'Bangers', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info .awards-section h2::after,
+.movie-info .box-office-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-1);
+  border-radius: 5px;
+}
+
+.awards-list, .box-office-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.awards-list li, .box-office-section li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.awards-list li::before, .box-office-section li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.movie-info .awards-section button {
+  background: var(--gradient-1);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+}
+
+.movie-info .awards-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+}
+
+/* User rating section */
+.user-rating {
+  background: rgba(26, 26, 46, 0.7);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-rating::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-3);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+.user-rating h4 {
+  font-family: 'Bangers', cursive;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.user-rating h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-3);
+  border-radius: 5px;
+}
+
+/* Similar movies section */
 .similar-movies-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #181818;
-    border-radius: 8px;
-    border: 1px solid #333;
+  margin: 50px 0 30px;
+  background: rgba(15, 52, 96, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.similar-movies-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-2);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
 }
 
 .similar-movies-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #ff9800;
+  font-family: 'Bangers', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.similar-movies-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-2);
+  border-radius: 5px;
 }
 
 .similar-movies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 500px));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .similar-movie-card {
-    text-align: center;
-    background-color: #272727;
-    padding: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: rgba(26, 26, 46, 0.7);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
 }
 
 .similar-movie-card:hover {
-    transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: var(--glow);
+  border-color: var(--primary-color);
 }
 
 .similar-movie-poster {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: calc(var(--border-radius) - 4px);
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+}
+
+.similar-movie-card:hover .similar-movie-poster {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .similar-movie-title {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-light);
+  margin-top: 15px;
+  text-align: center;
+  transition: var(--transition);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 44px;
 }
 
-/* Заголовки для секций Награды и Кассовые сборы */
-.movie-info .awards-section h2,
-.movie-info .box-office-section h2 {
-    font-size: 16px; /* Увеличенный размер заголовка */
-    color: #ff9800; /* Цвет заголовка */
-    margin-bottom: 6px; /* Отступ снизу */
+.similar-movie-card:hover .similar-movie-title {
+  color: var(--primary-color);
 }
 
+/* Links */
+a {
+  display: inline-block;
+  background: var(--gradient-2);
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  margin: 20px 0;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(123, 44, 191, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--gradient-1);
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(123, 44, 191, 0.4);
+}
+
+a:hover::before {
+  width: 100%;
+}
+
+/* Новые аниме-элементы */
+.anime-container {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.anime-decoration {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.top-left {
+  top: -50px;
+  left: -50px;
+  background: var(--gradient-1);
+  animation: float 15s ease-in-out infinite alternate;
+}
+
+.top-right {
+  top: -100px;
+  right: -100px;
+  background: var(--gradient-2);
+  animation: float 18s ease-in-out infinite alternate-reverse;
+}
+
+.bottom-left {
+  bottom: -80px;
+  left: -80px;
+  background: var(--gradient-3);
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.bottom-right {
+  bottom: -50px;
+  right: -50px;
+  background: var(--primary-color);
+  animation: float 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(30px) scale(1.1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(-20px) scale(0.9);
+    opacity: 0.1;
+  }
+}
+
+.anime-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bangers', cursive;
+  font-size: 28px;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  margin: 100px auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.anime-loading span {
+  display: inline-block;
+  animation: dotPulse 1.4s infinite;
+  margin-left: 2px;
+  opacity: 0;
+}
+
+.anime-loading span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.anime-loading span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  50%, 100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.genre-tag {
+  display: inline-block;
+  color: var(--accent-color);
+  transition: var(--transition);
+}
+
+.genre-tag:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
+.rating-highlight {
+  display: inline-block;
+  background: rgba(255, 77, 109, 0.15);
+  color: var(--primary-color);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .movie-details-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .movie-details-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .movie-poster {
-        width: 100%;
-        max-width: 300px;
-    }
+  .movie-poster-container {
+    width: 250px;
+  }
 
-    .movie-info {
-        text-align: center;
-    }
+  .movie-poster {
+    width: 100%;
+  }
+
+  .poster-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .anime-decoration {
+    width: 150px;
+    height: 150px;
+  }
+
+  .movie-info {
+    width: 100%;
+  }
+
+  .movie-info p strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .movie-extras {
+    flex-direction: column;
+  }
+
+  .movie-info .awards-section h2::after,
+  .movie-info .box-office-section h2::after,
+  .similar-movies-section h2::after,
+  .playerControlPanel h1::after,
+  .movie-info h1::after,
+  .user-rating h4::after {
+    width: 50px;
+  }
+
+  .similar-movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
 }
 
 @media (max-width: 480px) {
-    .playerButtonContainer {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .playerButtonContainer {
+    justify-content: center;
+  }
 
-    .buttonPlayer {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
+  .buttonPlayer {
+    width: 50px;
+    height: 50px;
+  }
 
-    .similar-movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
+  .movie-info h1 {
+    font-size: 28px;
+  }
+
+  .similar-movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .playerControlPanel,
+  .similar-movies-section,
+  .movie-details-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .anime-container {
+    padding: 10px;
+  }
+  
+  .anime-watch-btn a {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+  
+  .movie-poster-container {
+    width: 200px;
+  }
 }
